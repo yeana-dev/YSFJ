@@ -1,0 +1,32 @@
+{
+  "name": "YSFJ",
+  "version": "1.0.0",
+  "description": "![header](https://capsule-render.vercel.app/api?type=waving&color=black&height=300&section=header&text=😎YSFJ🤓&fontSize=90&fontColor=FFFFFF)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeana-dev/YSFJ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeana-dev/YSFJ/issues"
+  },
+  "homepage": "https://github.com/yeana-dev/YSFJ#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "type": "module"
+}
