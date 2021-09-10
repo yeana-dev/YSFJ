@@ -12,7 +12,7 @@ const insertData = async () => {
       image_url: "url",
       description: "description",
       price: 45,
-      color: black
+      color: "black"
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -23,7 +23,7 @@ const insertData = async () => {
       image_url: "url",
       description: "description",
       price: 45,
-      color: black
+      color: "black"
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
