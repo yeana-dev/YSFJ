@@ -60,24 +60,6 @@ export const signIn = async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 }
-
-export const signIn = async (req, res) => {
-
-  // Pull out the email and password from the request body
-
-  // Find the user in the MongoDB database using Mongoose's findOne method using the email that was obtained from the request body
-
-  // Use the bcrypt library's compare method to see if the password that the user "typed" in matches the password that is stored in the database
-  // Note: bcrypt compare will hash the password before it compares it with the hashed password that is already in MongoDB
-
-  // If the password hashes are a match then create:
-  // 1. a payload object with the username and email
-  // 2. a JWT based on the secret token key and payload
-  // 3. respond to the client with the JWT
-
-  // If the password hashes do not match then respond to the client with "Invalid Credentials!"
-}
-
 export const verify = async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1]
@@ -90,5 +72,3 @@ export const verify = async (req, res) => {
     res.status(401).send('Not Authorized')
   }
 }
-
-export const changePassword = async (req, res) => { }
