@@ -6,7 +6,7 @@ YSFJ 😎
 
 ## Project Description
 
-From the creators of the famous blog 'four-eyes', YSFJ, is a streamlined virtual eyewear boutique. Don't lose sight of what matters most. Glasses for adventure. **Glasses for life!** 
+From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual eyewear boutique. Don't lose sight of what matters most. Glasses for adventure. **Glasses for life!** 
 
 ## API and Data Sample
 
