@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Home from './screens/Home/Home'
-import Products from './screens/Products/Products'
-import ProductCreate from './screens/ProductCreate/ProductCreate'
-import ProductEdit from './screens/ProductEdit/ProductEdit'
-import Detail from './screens/Detail/Detail'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { verifyUser } from './services/users'
-import SignUp from './screens/SignUp/SignUp'
-import SignIn from './screens/SignIn/SignIn'
-import SignOut from './screens/SignOut/SignOut'
+import { useState, useEffect } from "react";
+import "./App.css";
+import Home from "./Screens/Home/Home";
+import Products from "./Screens/Products/Products";
+import ProductCreate from "./Screens/ProductCreate/ProductCreate";
+import ProductEdit from "./Screens/ProductEdit/ProductEdit";
+// import Detail from "./Screens/Detail/Detail";
+import SignUp from "./Screens/SignUp/SignUp";
+import SignIn from "./Screens/SignIn/SignIn";
+// import SignOut from "./Screens/SignOut/SignOut";
+import Support from "./Screens/Support/Support";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { verifyUser } from "./Services/users";
 
 const App = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await verifyUser()
-      user ? setUser(user) : setUser(null)
-    }
-    fetchUser()
-  }, [])
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
+    };
+    fetchUser();
+  }, []);
 
   return (
     <div className="app">
@@ -34,9 +35,9 @@ const App = () => {
         <Route path="/sign-in">
           <SignIn setUser={setUser} />
         </Route>
-        <Route path="/sign-out">
+        {/* <Route path="/sign-out">
           <SignOut setUser={setUser} />
-        </Route>
+        </Route> */}
         <Route exact path="/products">
           <Products user={user} />
         </Route>
@@ -44,17 +45,17 @@ const App = () => {
           {user ? <ProductCreate user={user} /> : <Redirect to="/sign-up" />}
         </Route>
         <Route exact path="/products/:id/edit">
-          {user ? <ProductEdit user={user} /> : <Redirect to='/' />}
+          {user ? <ProductEdit user={user} /> : <Redirect to="/" />}
         </Route>
-        <Route exact path="/products/:id">
+        {/* <Route exact path="/products/:id">
           <Detail user={user} />
-        </Route>
+        </Route> */}
         <Route exact path="/support">
           <Support user={user} />
         </Route>
       </Switch>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
