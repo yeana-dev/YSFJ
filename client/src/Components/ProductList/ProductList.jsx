@@ -13,7 +13,6 @@ const ProductCards = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
   const CARDS = products
     .reverse()
     .map((product, index) =>
