@@ -17,7 +17,7 @@ const ProductCards = () => {
     .reverse()
     .map((product, index) =>
       index < 8 ? (
-        <ProductCard
+        <Detail
           _id={product._id}
           name={product.name}
           imgURL={product.imgURL}
@@ -27,8 +27,7 @@ const ProductCards = () => {
     )
 
   return (
-    <div className='product-cards'>
-      <div className='latest'>LATEST</div>
+    <div className='products'>
       <div className='cards'>{CARDS}</div>
     </div>
   )
