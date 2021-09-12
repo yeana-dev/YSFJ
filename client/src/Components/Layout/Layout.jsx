@@ -1,9 +1,9 @@
-import Nav from "../Nav/Nav";
+import Navigation from "../Navigation/Navigation";
 
 const Layout = (props) => {
   return (
     <>
-      <Nav />
+      <Navigation />
       {props.children}
     </>
   );
