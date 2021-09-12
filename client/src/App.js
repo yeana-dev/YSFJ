@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Home from './screens/Home/Home'
-import Products from './screens/Products/Products'
-import ProductCreate from './screens/ProductCreate/ProductCreate'
-import ProductEdit from './screens/ProductEdit/ProductEdit'
-import Detail from './screens/Detail/Detail'
+import Home from "./Screens/Home/Home";
+import Products from "./Screens/Products/Products";
+import ProductCreate from "./Screens/ProductCreate/ProductCreate";
+import ProductEdit from "./Screens/ProductEdit/ProductEdit";
+// import Detail from "./Screens/Detail/Detail";
 import { Route, Switch, Redirect } from 'react-router-dom'
-import { verifyUser } from './services/users'
-import SignUp from './screens/SignUp/SignUp'
-import SignIn from './screens/SignIn/SignIn'
-import SignOut from './screens/SignOut/SignOut'
+import { verifyUser } from './Services/users'
+import SignUp from "./Screens/SignUp/SignUp";
+import SignIn from "./Screens/SignIn/SignIn";
+// import SignOut from "./Screens/SignOut/SignOut";
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -34,9 +34,9 @@ const App = () => {
         <Route path="/sign-in">
           <SignIn setUser={setUser} />
         </Route>
-        <Route path="/sign-out">
+        {/* <Route path="/sign-out">
           <SignOut setUser={setUser} />
-        </Route>
+        </Route> */}
         <Route exact path="/products">
           <Products user={user} />
         </Route>
@@ -46,12 +46,12 @@ const App = () => {
         <Route exact path="/products/:id/edit">
           {user ? <ProductEdit user={user} /> : <Redirect to='/' />}
         </Route>
-        <Route exact path="/products/:id">
+        {/* <Route exact path="/products/:id">
           <Detail user={user} />
-        </Route>
-        <Route exact path="/support">
+        </Route> */}
+        {/* <Route exact path="/support">
           <Support user={user} />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   )
