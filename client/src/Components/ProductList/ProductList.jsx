@@ -16,11 +16,11 @@ const ProductCards = () => {
   const CARDS = products
     .reverse()
     .map((product, index) =>
-      index < 8 ? (
+      index < 6 ? (
         <Detail
           _id={product._id}
           title={product.title}
-          imgURL={product.image_url}
+          image_url={product.image_url}
           color={product.color}
           price={product.price}
           key={index}
