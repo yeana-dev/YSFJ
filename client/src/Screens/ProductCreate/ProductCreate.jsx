@@ -16,10 +16,10 @@ const ProductCreate = (props) => {
   const [isCreated, setCreated] = useState(false);
 
   const handleChange = (event) => {
-    const { title, value } = event.target;
+    const { name, value } = event.target;
     setProduct({
       ...product,
-      [title]: value,
+      [name]: value,
     });
   };
 
@@ -32,6 +32,7 @@ const ProductCreate = (props) => {
   if (isCreated) {
     return <Redirect to={`/products`} />;
   }
+
   return (
     <Layout user={props.user}>
       <div className="product-create">
@@ -48,8 +49,8 @@ const ProductCreate = (props) => {
           <input
             className="input-image-link"
             placeholder="Image Link"
-            value={product.imgURL}
-            name="imgURL"
+            value={product.image_url}
+            name="image_url"
             required
             onChange={handleChange}
           />
