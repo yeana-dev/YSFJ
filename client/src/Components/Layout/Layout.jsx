@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 const Layout = (props) => {
   return (
     <>
-      <Navigation />
+      <Navigation user={props.user} />
       {props.children}
     </>
   );
