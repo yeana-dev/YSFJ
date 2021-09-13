@@ -9,7 +9,7 @@ const getToken = () => {
 const api = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
-      ? "https://ysfj-api.herokuapp.com/api"
+      ? "https://ysfj-app.herokuapp.com/api"
       : "http://localhost:3000/api",
 });
 
