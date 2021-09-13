@@ -5,14 +5,14 @@ import { getProduct, deleteProduct } from '../../services/products'
 import { useParams, Link } from 'react-router-dom'
 
 const Detail = (props) => {
-  const [product, setProduct] = useState(null)
+  const [detail, setDetail] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
 
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getProduct(id)
-      setProduct(detail)
+      setDetail(detail)
       setLoaded(true)
     }
     fetchProduct()
