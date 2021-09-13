@@ -50,9 +50,9 @@ const App = () => {
         {/* <Route exact path="/products/:id">
           <Detail user={user} />
         </Route> */}
-        <Route exact path="/support">
+        {/* <Route exact path="/support">
           <Support user={user} />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
