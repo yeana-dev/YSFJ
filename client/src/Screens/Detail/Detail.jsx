@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
-import "./ProductDetail.css";
-import { Layout } from "../../components";
-import { getProduct, deleteProduct } from "../../services/products";
-import { useParams, Link } from "react-router-dom";
+import Layout from "../../Components/Layout/Layout";
+import { getDetail } from "../../Services/products";
+import { deleteProduct } from "../../Services/products";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 const Detail = (props) => {
   const [detail, setDetail] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const detail = await getProduct(id);
+      const detail = await getDetail(id);
       setDetail(detail);
       setLoaded(true);
     };
     fetchProduct();
   }, [id]);
+
+  const handleDelete = () => {
+    deleteProduct(detail._id);
+    history.push("/products");
+  };
 
   if (!isLoaded) {
     return <h1>Loading...</h1>;
@@ -38,10 +44,7 @@ const Detail = (props) => {
             <Link className="edit-button" to={`/products/${detail._id}/edit`}>
               Edit
             </Link>
-            <button
-              className="delete-button"
-              onClick={() => deleteProduct(detail._id)}
-            >
+            <button className="delete-button" onClick={handleDelete}>
               Delete
             </button>
           </div>
