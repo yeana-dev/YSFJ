@@ -10,6 +10,7 @@ const Navigation = () => {
         YSFJ
       </Navbar.Brand>
       <NavLink to="/sign-in">sign-in</NavLink>
+      <NavLink to="/add-product">Add Product</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto" id="navbar-bottom">
