@@ -15,7 +15,7 @@ const insertData = async () => {
 
   const products = [
     {
-      title: "Avant-Garde",
+      title: "B",
       image_url:
         "https://i.warbycdn.com/s/c/7f4f6dafeb2edceb16559a5f0856966674239d1f.png?quality=80&width=900",
       description: "description",

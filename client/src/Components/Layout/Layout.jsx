@@ -4,7 +4,7 @@ const Layout = (props) => {
   return (
     <>
       <Navigation user={props.user} />
-      {props.children}
+      <div className="container">{props.children}</div>
     </>
   );
 };
