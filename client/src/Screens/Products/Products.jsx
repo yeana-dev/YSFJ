@@ -20,8 +20,8 @@ function Products(props) {
   }, []);
 
   const handleSearch = (event) => {
-    const results = products.filter((product) =>
-      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    const results = products.filter((detail) =>
+      detail.title.toLowerCase().includes(event.target.value.toLowerCase())
     )
     setSearchResult(results)
   }
@@ -33,7 +33,7 @@ function Products(props) {
     <Layout user={props.user}>
       <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
       <div className="products">
-        {products.map((product, index) => {
+        {searchResult.map((product, index) => {
           return (
             <Detail
               _id={product._id}
