@@ -3,9 +3,9 @@ import HomeCarousel from "../../Components/Carousel/HomeCarousel";
 import ProductList from "../../Components/ProductList/ProductList";
 import "./Home.css";
 
-const Home = () => {
+const Home = (props) => {
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="container">
         <HomeCarousel />
       </div>
