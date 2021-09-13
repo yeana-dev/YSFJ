@@ -4,15 +4,15 @@ import { useHistory } from "react-router-dom";
 
 const SignOut = (props) => {
   const history = useHistory();
-
+  const { setUser } = props;
   useEffect(() => {
     const signOutUser = async () => {
       await signOut();
-      props.setUser(null);
+      setUser(null);
       history.push("/");
     };
     signOutUser();
-  }, [history, props.setUser]);
+  }, [history, setUser]);
 
   return "";
 };
