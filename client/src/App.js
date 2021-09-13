@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
 import Home from "./Screens/Home/Home";
 import Products from "./Screens/Products/Products";
 import ProductCreate from "./Screens/ProductCreate/ProductCreate";
 import ProductEdit from "./Screens/ProductEdit/ProductEdit";
 // import Detail from "./Screens/Detail/Detail";
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { verifyUser } from './Services/users'
 import SignUp from "./Screens/SignUp/SignUp";
 import SignIn from "./Screens/SignIn/SignIn";
 // import SignOut from "./Screens/SignOut/SignOut";
+import Support from "./Screens/Support/Support";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { verifyUser } from "./Services/users";
 
 const App = () => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await verifyUser()
-      user ? setUser(user) : setUser(null)
-    }
-    fetchUser()
-  }, [])
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
+    };
+    fetchUser();
+  }, []);
 
   return (
     <div className="app">
@@ -44,7 +45,7 @@ const App = () => {
           {user ? <ProductCreate user={user} /> : <Redirect to="/sign-up" />}
         </Route>
         <Route exact path="/products/:id/edit">
-          {user ? <ProductEdit user={user} /> : <Redirect to='/' />}
+          {user ? <ProductEdit user={user} /> : <Redirect to="/" />}
         </Route>
         {/* <Route exact path="/products/:id">
           <Detail user={user} />
@@ -54,7 +55,7 @@ const App = () => {
         </Route> */}
       </Switch>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -3,7 +3,7 @@ export const team = [
     name: "Yeana Cho",
     github: "https://github.com/yeana-dev",
     linkedin: "https://www.linkedin.com/in/yeana-cho-330312113/",
-    email: "yeana-dev@gmail.com",
+    email: "yeana.dev@gmail.com",
   },
   {
     name: "Sofanit Tesfaye",

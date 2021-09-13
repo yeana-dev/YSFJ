@@ -1,0 +1,13 @@
+.carousel img {
+  object-fit: cover;
+  height: 450px;
+}
+
+.carousel-caption {
+  top: 2em;
+  bottom: auto;
+}
+
+.second-carousel-caption {
+  color: black;
+}
