@@ -2,26 +2,36 @@ import { useState, useEffect } from "react";
 import "./Products.css";
 import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
+import Search from "../../Components/Search/Search"
 import { getProducts } from "../../Services/products";
 
 function Products(props) {
   const [products, setProducts] = useState([]);
-  // const [searchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState([])
 
   useEffect(() => {
     const fetchProducts = async () => {
       const allProducts = await getProducts();
       setProducts(allProducts);
       console.log(allProducts);
-      // setSearchResult(allProducts)
+      setSearchResult(allProducts)
     };
     fetchProducts();
   }, []);
 
+  const handleSearch = (event) => {
+    const results = products.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    )
+    setSearchResult(results)
+  }
+
+  const handleSubmit = (event) => event.preventDefault()
+
+
   return (
     <Layout user={props.user}>
-      {/* <Search onSubmit={handleSubmit} handleSearch={handleSearch} /> */}
-      {/* <Sort onSubmit={handleSubmit} handleSort={handleSort} /> */}
+      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
       <div className="products">
         {products.map((product, index) => {
           return (
