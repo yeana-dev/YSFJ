@@ -31,7 +31,6 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
   const authenticatedOptions = (
-    // props.user.username !== null && props.user.username === detail.createdBy
     <>
       <div className="button-container">
         <Link className="edit-button" to={`/products/${detail._id}/edit`}>
