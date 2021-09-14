@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-.detail-products{
-  width:30%;
-  margin-left: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+.detail-products {
+  width: 30%;
+  /* margin-left: 10px;
   margin-right: 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: 'Merriweather', serif;
+  margin-bottom: 20px; */
+  margin: 20px 10px;
+  font-family: "Merriweather", serif;
 }
-.card{
-  text-decoration:none ;
+.card {
+  text-decoration: none;
   color: black;
   text-align: center;
 }
