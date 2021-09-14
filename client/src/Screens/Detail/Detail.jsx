@@ -30,12 +30,15 @@ const Detail = (props) => {
 
   return (
     <Layout user={props.user}>
+      
       <div className="detail">
+        {detail.image_url.map(image => (
         <img
           className="detail-image"
-          src={detail.image_url}
-          alt={detail.name}
+          src={image}
+          alt="glasses"
         />
+        ))}
         <div className="detail">
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
