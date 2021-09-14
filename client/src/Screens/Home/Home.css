@@ -1,3 +1,18 @@
 .cards img {
   width: 300px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-best-sellers {
+  margin: 3em auto;
+}
+
+.home-best-sellers header {
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 10px;
+}

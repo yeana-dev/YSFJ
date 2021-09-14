@@ -30,34 +30,33 @@ const Detail = (props) => {
   if (!isLoaded) {
     return <h1>Loading...</h1>;
   }
-
   const authenticatedOptions = (
-    detail.createdBy === props.user.username ?
-      <>
-        <div className="button-container">
-          <Link className="edit-button" to={`/products/${detail._id}/edit`}>
-            Edit
-          </Link>
-          <button className="delete-button" onClick={handleDelete}>
-            Delete
-          </button>
-        </div>
-      </> : null
+    <>
+      <div className="button-container">
+        <Link className="edit-button" to={`/products/${detail._id}/edit`}>
+          Edit
+        </Link>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </>
   );
 
   const unauthenticatedOptions = (
     <>
-      null
+      <div className="add-to-cart">
+        <button>Add to cart</button>
+      </div>
     </>
   );
 
+  const unauthenticatedOptions = <>null</>;
 
   return (
     <Layout user={props.user}>
-
       <div className="detail">
         {detail.image_url.map((image, index) => (
-
           <img
             className="detail-image"
             src={image}
@@ -68,13 +67,12 @@ const Detail = (props) => {
             }}
           />
         ))}
-        {props.user ? authenticatedOptions : unauthenticatedOptions}
+        {props.user !== null && props.user.username === detail.createdBy ? authenticatedOptions : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
           <div className="description">{detail.description}</div>
-
         </div>
       </div>
     </Layout>
