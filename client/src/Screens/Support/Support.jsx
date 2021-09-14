@@ -6,7 +6,7 @@ import "./Support.css";
 const Support = (props) => {
   return (
     <Layout user={props.user}>
-      <div className="container">
+      <div className="support-container">
         <div className="support-left">
           <header>SUPPORT</header>
           <div className="support-content">

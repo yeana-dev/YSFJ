@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Detail from "../Detail/Detail";
 import { getProducts } from "../../Services/products";
+import "./ProductList.css";
 
 const ProductCards = () => {
   const [products, setProducts] = useState([]);
@@ -20,7 +21,7 @@ const ProductCards = () => {
         <Detail
           _id={product._id}
           title={product.title}
-          image_url={product.image_url}
+          image_url={product.image_url[0]}
           color={product.color}
           price={product.price}
           key={index}
@@ -30,7 +31,9 @@ const ProductCards = () => {
 
   return (
     <div className="products">
-      <div className="cards">{CARDS}</div>
+      {/* <div className="cards"> */}
+      {CARDS}
+      {/* </div> */}
     </div>
   );
 };

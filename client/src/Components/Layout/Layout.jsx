@@ -1,4 +1,5 @@
 import Navigation from "../Navigation/Navigation";
+import "./Layout.css";
 
 const Layout = (props) => {
   return (

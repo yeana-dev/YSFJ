@@ -31,8 +31,8 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
 
-  const authenticatedOptions = (
-    detail.createdBy === props.user.username ?
+  const authenticatedOptions =
+    detail.createdBy === props.user.username ? (
       <>
         <div className="button-container">
           <Link className="edit-button" to={`/products/${detail._id}/edit`}>
@@ -42,22 +42,15 @@ const Detail = (props) => {
             Delete
           </button>
         </div>
-      </> : null
-  );
+      </>
+    ) : null;
 
-  const unauthenticatedOptions = (
-    <>
-      null
-    </>
-  );
-
+  const unauthenticatedOptions = <>null</>;
 
   return (
     <Layout user={props.user}>
-
       <div className="detail">
         {detail.image_url.map((image, index) => (
-
           <img
             className="detail-image"
             src={image}
@@ -74,7 +67,6 @@ const Detail = (props) => {
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
           <div className="description">{detail.description}</div>
-
         </div>
       </div>
     </Layout>
