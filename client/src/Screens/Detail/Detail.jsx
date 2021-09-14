@@ -3,10 +3,12 @@ import Layout from "../../Components/Layout/Layout";
 import { getDetail } from "../../Services/products";
 import { deleteProduct } from "../../Services/products";
 import { useParams, Link, useHistory } from "react-router-dom";
+import "./Detail.css";
 
 const Detail = (props) => {
   const [detail, setDetail] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
+  const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
 
@@ -14,6 +16,7 @@ const Detail = (props) => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
       setDetail(detail);
+      setRenderedImage(detail.image_url[0]);
       setLoaded(true);
     };
     fetchProduct();
@@ -28,29 +31,50 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
 
+  const authenticatedOptions = (
+    detail.createdBy === props.user.username ?
+      <>
+        <div className="button-container">
+          <Link className="edit-button" to={`/products/${detail._id}/edit`}>
+            Edit
+          </Link>
+          <button className="delete-button" onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
+      </> : null
+  );
+
+  const unauthenticatedOptions = (
+    <>
+      null
+    </>
+  );
+
+
   return (
     <Layout user={props.user}>
-      
+
       <div className="detail">
-        {detail.image_url.map(image => (
-        <img
-          className="detail-image"
-          src={image}
-          alt="glasses"
-        />
+        {detail.image_url.map((image, index) => (
+
+          <img
+            className="detail-image"
+            src={image}
+            alt="glasses"
+            key={index}
+            onClick={() => {
+              setRenderedImage(image);
+            }}
+          />
         ))}
+        {props.user ? authenticatedOptions : unauthenticatedOptions}
         <div className="detail">
+          <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
           <div className="description">{detail.description}</div>
-          <div className="button-container">
-            <Link className="edit-button" to={`/products/${detail._id}/edit`}>
-              Edit
-            </Link>
-            <button className="delete-button" onClick={handleDelete}>
-              Delete
-            </button>
-          </div>
+
         </div>
       </div>
     </Layout>

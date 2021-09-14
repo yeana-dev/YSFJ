@@ -6,7 +6,7 @@ import "./Navigation.css";
 const authenticatedOptions = (
   <>
     <Link className="link" to="/add-product">
-      <i class="fas fa-plus-circle"></i>
+      <i className="fas fa-plus-circle"></i>
     </Link>
     <Link className="link" to="/sign-out">
       <button>SIGN OUT</button>
