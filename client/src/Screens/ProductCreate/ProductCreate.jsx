@@ -7,7 +7,7 @@ import Layout from "../../Components/Layout/Layout";
 const ProductCreate = (props) => {
   const [product, setProduct] = useState({
     title: "",
-    image_url: "",
+    image_url: [],
     description: "",
     price: "",
     color: "",
@@ -17,12 +17,20 @@ const ProductCreate = (props) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setProduct({
-      ...product,
-      [name]: value,
-    });
-  };
 
+    if (name === "image_url") {
+      const list = [...product.image_url, value];
+      setProduct({ ...product, image_url : list });
+    } else {
+      setProduct({
+        ...product,
+        [name]: value,
+      });
+    }
+  };
+  // const addImage = (event) => {
+  //   setProduct(image_url: [...image_url, event.target.value]
+  //   })
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await createProduct(product);
@@ -49,7 +57,23 @@ const ProductCreate = (props) => {
           <input
             className="input-image-link"
             placeholder="Image Link"
-            value={product.image_url}
+            value={product.image_url[0]}
+            name="image_url"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="input-image-link"
+            placeholder="Image Link"
+            value={product.image_url[1]}
+            name="image_url"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="input-image-link"
+            placeholder="Image Link"
+            value={product.image_url[2]}
             name="image_url"
             required
             onChange={handleChange}
