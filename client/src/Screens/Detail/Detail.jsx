@@ -31,19 +31,26 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
 
-  const authenticatedOptions =
-    detail.createdBy === props.user.username ? (
-      <>
-        <div className="button-container">
-          <Link className="edit-button" to={`/products/${detail._id}/edit`}>
-            Edit
-          </Link>
-          <button className="delete-button" onClick={handleDelete}>
-            Delete
-          </button>
-        </div>
-      </>
-    ) : null;
+  const authenticatedOptions = (
+    <>
+      <div className="button-container">
+        <Link className="edit-button" to={`/products/${detail._id}/edit`}>
+          Edit
+        </Link>
+        <button className="delete-button" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </>
+  );
+
+  const unauthenticatedOptions = (
+    <>
+      <div className="add-to-cart">
+        <button>Add to cart</button>
+      </div>
+    </>
+  );
 
   const unauthenticatedOptions = <>null</>;
 
@@ -61,7 +68,9 @@ const Detail = (props) => {
             }}
           />
         ))}
-        {props.user ? authenticatedOptions : unauthenticatedOptions}
+        {props.user !== null && props.user.username === detail.createdBy
+          ? authenticatedOptions
+          : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>
