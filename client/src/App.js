@@ -8,7 +8,7 @@ import Detail from "./Screens/Detail/Detail";
 import SignUp from "./Screens/SignUp/SignUp";
 import SignIn from "./Screens/SignIn/SignIn";
 import SignOut from "./Screens/SignOut/SignOut";
-// import Support from "./Screens/Support/Support";
+import Support from "./Screens/Support/Support";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./Services/users";
 
@@ -50,9 +50,9 @@ const App = () => {
         <Route exact path="/products/:id">
           <Detail user={user} />
         </Route>
-        {/* <Route exact path="/support">
+        <Route exact path="/support">
           <Support user={user} />
-        </Route> */}
+        </Route>
       </Switch>
     </div>
   );
