@@ -51,8 +51,6 @@ const Detail = (props) => {
     </>
   );
 
-  const unauthenticatedOptions = <>null</>;
-
   return (
     <Layout user={props.user}>
       <div className="detail">
