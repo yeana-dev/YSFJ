@@ -5,12 +5,14 @@ import { createProduct } from "../../Services/products";
 import Layout from "../../Components/Layout/Layout";
 
 const ProductCreate = (props) => {
+  const u = props.user.username
   const [product, setProduct] = useState({
     title: "",
     image_url: [],
     description: "",
     price: "",
     color: "",
+    createdBy: u
   });
 
   const [isCreated, setCreated] = useState(false);
@@ -20,7 +22,7 @@ const ProductCreate = (props) => {
 
     if (name === "image_url") {
       const list = [...product.image_url, value];
-      setProduct({ ...product, image_url : list });
+      setProduct({ ...product, image_url: list });
     } else {
       setProduct({
         ...product,
