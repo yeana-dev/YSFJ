@@ -20,7 +20,7 @@ const ProductCards = () => {
         <Detail
           _id={product._id}
           title={product.title}
-          image_url={product.image_url}
+          image_url={product.image_url[0]}
           color={product.color}
           price={product.price}
           key={index}
