@@ -51,13 +51,12 @@ const Detail = (props) => {
     </>
   );
 
+  const unauthenticatedOptions = <>null</>;
 
   return (
     <Layout user={props.user}>
-
       <div className="detail">
         {detail.image_url.map((image, index) => (
-
           <img
             className="detail-image"
             src={image}
@@ -74,7 +73,6 @@ const Detail = (props) => {
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
           <div className="description">{detail.description}</div>
-
         </div>
       </div>
     </Layout>

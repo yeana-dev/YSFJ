@@ -1,4 +1,5 @@
 import { team } from "../../Services/team";
+import "./SupportTeam.css";
 
 const SupportTeam = () => {
   return (
