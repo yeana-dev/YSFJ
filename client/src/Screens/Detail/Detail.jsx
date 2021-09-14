@@ -30,7 +30,6 @@ const Detail = (props) => {
   if (!isLoaded) {
     return <h1>Loading...</h1>;
   }
-
   const authenticatedOptions = (
     <>
       <div className="button-container">
