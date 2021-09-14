@@ -24,6 +24,7 @@ const insertData = async () => {
       description: "description",
       price: 45,
       color: "black",
+      createdBy: "bruno"
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],

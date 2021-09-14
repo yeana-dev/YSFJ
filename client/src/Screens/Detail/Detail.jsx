@@ -31,10 +31,33 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
 
+  const authenticatedOptions = (
+    detail.createdBy === props.user.username ?
+      <>
+        <div className="button-container">
+          <Link className="edit-button" to={`/products/${detail._id}/edit`}>
+            Edit
+          </Link>
+          <button className="delete-button" onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
+      </> : null
+  );
+
+  const unauthenticatedOptions = (
+    <>
+      null
+    </>
+  );
+
+
   return (
     <Layout user={props.user}>
+
       <div className="detail">
         {detail.image_url.map((image, index) => (
+
           <img
             className="detail-image"
             src={image}
@@ -45,19 +68,13 @@ const Detail = (props) => {
             }}
           />
         ))}
+        {props.user ? authenticatedOptions : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>
           <div className="price">{`$${detail.price}`}</div>
           <div className="description">{detail.description}</div>
-          <div className="button-container">
-            <Link className="edit-button" to={`/products/${detail._id}/edit`}>
-              Edit
-            </Link>
-            <button className="delete-button" onClick={handleDelete}>
-              Delete
-            </button>
-          </div>
+
         </div>
       </div>
     </Layout>
