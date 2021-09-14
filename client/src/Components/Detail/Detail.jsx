@@ -10,9 +10,11 @@ const Detail = (props) => {
           src={props.image_url}
           alt={props.title}
         />
-        <div className="product-title">{props.title}</div>
-        <div className="price">{`$${props.price}`}</div>
-        <div className="color">{`Best selling Color:${props.color}`}</div>
+        <div className='text-box'>
+          <div className="product-title">{props.title}</div>
+          <div className="price">{`$${props.price}`}</div>
+          <div className="color">{`Best selling color:${props.color}`}</div>
+        </div>
       </Link>
     </div>
   );

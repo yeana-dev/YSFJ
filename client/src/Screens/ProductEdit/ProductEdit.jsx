@@ -48,15 +48,15 @@ const ProductEdit = (props) => {
         <div className="image-container">
           <img
             className="edit-product-image"
-            src={product.imgURL}
+            src={product.image_url}
             alt={product.title}
           />
           <form onSubmit={handleSubmit}>
             <input
               className="edit-input-image-link"
               placeholder="Image Link"
-              value={product.imgURL}
-              name="imgURL"
+              value={product.image_url}
+              name="image_url"
               required
               onChange={handleChange}
             />
@@ -70,6 +70,14 @@ const ProductEdit = (props) => {
             name="title"
             required
             autoFocus
+            onChange={handleChange}
+          />
+          <input
+            className="edit-input-image-link"
+            placeholder="Image Link"
+            value={product.image_url}
+            name="image_url"
+            required
             onChange={handleChange}
           />
           <textarea
@@ -96,7 +104,7 @@ const ProductEdit = (props) => {
             value={product.color}
             name="color"
             required
-            autoFocus
+            // autoFocus
             onChange={handleChange}
           />
           <button type="submit" className="save-button">

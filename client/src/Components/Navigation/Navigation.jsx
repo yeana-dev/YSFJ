@@ -1,36 +1,42 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navigation.css";
 
 const authenticatedOptions = (
   <>
-    <NavLink className="link" to="/add-product">
-      Add Product
-    </NavLink>
-    <NavLink className="link" to="/sign-out">
-      Sign Out
-    </NavLink>
+    <Link className="link" to="/add-product">
+      <i className="fas fa-plus-circle"></i>
+    </Link>
+    <Link className="link" to="/sign-out">
+      <button>SIGN OUT</button>
+    </Link>
   </>
 );
 
 const unauthenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-in">
-      Sign In
-    </NavLink>
+    <Link className="link" to="/sign-in">
+      <i className="fas fa-user-circle"></i>
+    </Link>
   </>
 );
 
 const Navigation = ({ user }) => {
   return (
     <Navbar sticky="top" expand="lg" id="navbar">
-      <Navbar.Brand href="/" id="navbar-logo">
-        YSFJ
-      </Navbar.Brand>
-      {user && <div className="link welcome">Welcome, {user.username}</div>}
-      {user ? authenticatedOptions : unauthenticatedOptions}
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <div className="navbar-top">
+        <Navbar.Brand href="/" id="navbar-logo" className="text-center">
+          YSFJ
+        </Navbar.Brand>
+        <Navbar.Text>
+          {user && (
+            <div className="user-name">{`Welcome ${user.username}`}</div>
+          )}
+          {user ? authenticatedOptions : unauthenticatedOptions}
+        </Navbar.Text>
+      </div>
+      <Navbar.Toggle id="navbar-toggle" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto" id="navbar-bottom">
           <NavLink to="/">HOME</NavLink>

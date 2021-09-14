@@ -1,0 +1,35 @@
+header {
+  font-family: "Merriweather", serif;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  gap: 2em;
+  margin-top: 5px;
+}
+
+.support-left {
+  background: #f0f0f0;
+  padding: 1em;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+}
+
+.support-content {
+  font-size: 14px;
+}
+
+.support-team {
+  margin-top: 1em;
+}
+
+.support-right {
+  width: 50%;
+}
+
+#contact-message {
+  resize: none;
+  height: 6.5em;
+}
