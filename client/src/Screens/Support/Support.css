@@ -4,7 +4,7 @@ header {
   font-weight: 600;
 }
 
-.container {
+.support-container {
   display: flex;
   gap: 2em;
   margin-top: 5px;

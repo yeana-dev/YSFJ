@@ -6,8 +6,23 @@
 .carousel-caption {
   top: 2em;
   bottom: auto;
+  font-family: "Merriweather", serif;
 }
 
-.second-carousel-caption {
+.carousel-caption h3 {
+  font-size: 45px;
+  font-weight: 600;
+  /* font-style: italic; */
+  letter-spacing: 5px;
+}
+
+.carousel-caption p {
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* second slide */
+.slide-2 {
   color: black;
 }
