@@ -72,3 +72,18 @@ export const verify = async (req, res) => {
     res.status(401).send("Not Authorized");
   }
 };
+export const getUserProduct = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const userProduct = await Product.findById(req.params.productId).populate('userId')
+    if (userProduct.userId.equals(user._id)) {
+      return res.json(userProduct)
+    }
+    throw new Error(
+      `Product ${userProduct._id} does not belong to user ${user._id}`
+    )
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({ error: error.message })
+  }
+}
