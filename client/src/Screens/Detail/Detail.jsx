@@ -51,7 +51,7 @@ const Detail = (props) => {
     </>
   );
 
-  const unauthenticatedOptions = <>null</>;
+  // const unauthenticatedOptions = <>null</>;
 
   return (
     <Layout user={props.user}>
