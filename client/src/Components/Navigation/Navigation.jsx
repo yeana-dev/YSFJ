@@ -1,6 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
+
 import "./Navigation.css";
 
 const authenticatedOptions = (
@@ -34,9 +35,9 @@ const Navigation = ({ user }) => {
             <div className="user-name">{`Welcome ${user.username}`}</div>
           )}
           {user ? authenticatedOptions : unauthenticatedOptions}
+          <Navbar.Toggle id="navbar-toggle" aria-controls="basic-navbar-nav" />
         </Navbar.Text>
       </div>
-      <Navbar.Toggle id="navbar-toggle" aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto" id="navbar-bottom">
           <NavLink to="/" exact>

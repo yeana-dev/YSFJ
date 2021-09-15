@@ -9,13 +9,13 @@ const SupportTeam = () => {
           <div className="team-name">{member.name}</div>
           <div className="team-links">
             <a href={member.github} target="_blank" rel="noreferrer">
-              <i class="fab fa-github-square"></i>
+              <i className="fab fa-github-square"></i>
             </a>
             <a href={member.linkedin} target="_blank" rel="noreferrer">
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </a>
             <a href={`mailto:${member.email}`}>
-              <i class="fas fa-envelope-square"></i>
+              <i className="fas fa-envelope-square"></i>
             </a>
           </div>
         </div>
