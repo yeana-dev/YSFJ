@@ -11,7 +11,7 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
-
+  const [cartProducts, setCartProducts] = useState([]);
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
@@ -42,16 +42,30 @@ const Detail = (props) => {
       </div>
     </>
   );
+  const handleAddProduct = () => {
+    const ProductExist = cartProducts.find(
+      (products) => products === products.id
+    );
+    if (ProductExist) {
+      setCartProducts(
+        cartProducts.map((products) =>
+          products !== products.id
+            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+            : products
+        )
+      );
+    } else {
+      setCartProducts([...cartProducts, { ...ProductExist, quantity: 1 }]);
+    }
+  };
 
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button>Add to cart</button>
+        <button onClick={handleAddProduct}>Add to cart</button>
       </div>
     </>
   );
-
-  const unauthenticatedOptions = <>null</>;
 
   return (
     <Layout user={props.user}>
@@ -67,7 +81,9 @@ const Detail = (props) => {
             }}
           />
         ))}
-        {props.user !== null && props.user.username === detail.createdBy ? authenticatedOptions : unauthenticatedOptions}
+        {props.user !== null && props.user.username === detail.createdBy
+          ? authenticatedOptions
+          : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>

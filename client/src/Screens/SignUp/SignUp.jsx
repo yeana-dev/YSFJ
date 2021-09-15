@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signUp } from "../../Services/users";
 import { useHistory } from "react-router-dom";
 import Layout from "../../Components/Layout/Layout";
+import "./SignUp.css";
 
 const SignUp = (props) => {
   const history = useHistory();
@@ -56,8 +57,7 @@ const SignUp = (props) => {
   return (
     <Layout user={props.user}>
       <div className="form-container">
-        <h3>Sign Up</h3>
-        <form onSubmit={handleSignUp}>
+        <form id="sign-up-form" onSubmit={handleSignUp}>
           <label>Username</label>
           <input
             required

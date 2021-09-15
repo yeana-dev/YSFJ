@@ -72,3 +72,25 @@ export const verify = async (req, res) => {
     res.status(401).send("Not Authorized");
   }
 };
+export const getUserCart = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const userCart = await Product.find({ userId: user._id })
+    res.json(userCart)
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({ error: error.message })
+  }
+}
+export const updateUserCart = async (req, res) => {
+  try {
+    if (await User.findById(req.params.id)) {
+      const product = await Product.findByIdAndUpdate(_id, req.body, { new: true })
+      res.status(200).json(product)
+    }
+    throw new Error(`User ${req.params.id} does not exist!`)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: error.message })
+  }
+}

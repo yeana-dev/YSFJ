@@ -3,6 +3,7 @@ import db from "./db/connection.js";
 import express from "express";
 import cors from "cors";
 import logger from "morgan";
+// import favicon from 'serve-favicon'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,12 +11,15 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 app.use(logger("dev"));
+// app.use(favicon('./client/public/favicon.ico'))
 
 app.use("/api", routes);
 
-db.on("connected", () => {
-  console.log("Connected to MongoDB!");
+db.on('connected', () => {
+  console.clear()
+  // console.log(chalk.blue('Connected to MongoDB!'))
   app.listen(PORT, () =>
-    console.log(`Express server application is running on port ${PORT}`)
-  );
-});
+    process.env.NODE_ENV === 'production'
+      ? console.log(`Express server running in production on port ${PORT}\n\n`)
+      : console.log(`Express server running in development on: http://localhost:${PORT}`))
+})
