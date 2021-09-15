@@ -1,39 +1,41 @@
+import Products from "../Products/Products";
 import React, { useState } from "react";
-import products from "../../../../Products";
 
-const Cart = ({ cartProducts}) => {
+
+
+const Cart = () => {
+  
   const [cartProducts, setCartProducts] = useState([]);
 
-  const handleAddProduct = (product) => {
-    const ProductExist = cartProducts.find((product) => product.id === product.id);
+  const handleRemoveProduct = (products) => {
+    const ProductExist = cartProducts.find((products) => products === products.id);
+    if (ProductExist.quantity === 1) {
+      setCartProducts(cartProducts.filter((products) =>products !== products.id));
+    } else {
+      setCartProducts(
+        cartProducts.map((products) =>
+          products === products.id
+            ? { ...ProductExist, quantity: ProductExist.quantity - 1 }
+            : products
+        )
+      );
+    }
+  };
+
+  const handleAddProduct = () => {
+    const ProductExist = cartProducts.find((products) => products === products.id);
     if (ProductExist) {
       setCartProducts(
-        cartProducts.map((product) =>
-          product.id === product.id
+        cartProducts.map((products) =>
+        products !== products.id
             ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
-            : product
+            : products
         )
       );
     } else {
       setCartProducts([...cartProducts, { ...ProductExist, quantity: 1 }]);
     }
   };
-
-  const handleRemoveProduct = (product) => {
-    const ProductExist = cartProducts.find((product) => product.id === product.id);
-    if (ProductExist.quantity === 1) {
-      setCartProducts(cartProducts.filter((product) => item.id !== product.id));
-    } else {
-      setCartProducts(
-        cartProducts.map((product) =>
-          product.id === product.id
-            ? { ...ProductExist, quantity: ProductExist.quantity - 1 }
-            : product
-        )
-      );
-    }
-  };
-
   const totalPrice = cartProducts.reduce(
     (price, product) => price + product.quantity * product.price,
     0

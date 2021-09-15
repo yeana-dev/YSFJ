@@ -11,7 +11,7 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
-
+  const [cartProducts, setCartProducts] = useState([]);
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
@@ -42,11 +42,27 @@ const Detail = (props) => {
       </div>
     </>
   );
+  const handleAddProduct = () => {
+    const ProductExist = cartProducts.find(
+      (products) => products === products.id
+    );
+    if (ProductExist) {
+      setCartProducts(
+        cartProducts.map((products) =>
+          products !== products.id
+            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+            : products
+        )
+      );
+    } else {
+      setCartProducts([...cartProducts, { ...ProductExist, quantity: 1 }]);
+    }
+  };
 
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button onClick={handleAddProduct(product)}>Add to cart</button>
+        <button onClick={handleAddProduct}>Add to cart</button>
       </div>
     </>
   );
