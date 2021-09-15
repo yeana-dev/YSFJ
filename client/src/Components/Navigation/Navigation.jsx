@@ -1,6 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
+import React from "react";
 
 import "./Navigation.css";
 
@@ -25,26 +26,43 @@ const unauthenticatedOptions = (
 
 const Navigation = ({ user }) => {
   return (
-    <Navbar sticky="top" expand="lg" id="navbar">
+    <Navbar
+      variant="dark"
+      collapseOnSelect
+      sticky="top"
+      expand="lg"
+      id="navbar"
+    >
       <div className="navbar-top">
-        <Navbar.Brand href="/" id="navbar-logo" className="text-center">
+        <Navbar.Toggle
+          id="navbar-toggle-button"
+          aria-controls="basic-navbar-nav"
+        >
+          <i class="fas fa-bars"></i>
+        </Navbar.Toggle>
+        <Navbar.Brand href="/" id="navbar-logo">
           YSFJ
         </Navbar.Brand>
-        <Navbar.Text>
+        <div id="nav-bar-text">
           {user && (
             <div className="user-name">{`Welcome ${user.username}`}</div>
           )}
           {user ? authenticatedOptions : unauthenticatedOptions}
-          <Navbar.Toggle id="navbar-toggle" aria-controls="basic-navbar-nav" />
-        </Navbar.Text>
+        </div>
       </div>
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto" id="navbar-bottom">
-          <NavLink to="/" exact>
-            HOME
-          </NavLink>
-          <NavLink to="/products">GLASSES</NavLink>
-          <NavLink to="/support">SUPPORT</NavLink>
+      <Navbar.Collapse>
+        <Nav id="navbar-bottom">
+          <Nav.Item>
+            <NavLink to="/" exact>
+              HOME
+            </NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/products">GLASSES</NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/support">SUPPORT</NavLink>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
