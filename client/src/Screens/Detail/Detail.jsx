@@ -51,8 +51,6 @@ const Detail = (props) => {
     </>
   );
 
-  // const unauthenticatedOptions = <>null</>;
-
   return (
     <Layout user={props.user}>
       <div className="detail">
@@ -67,7 +65,9 @@ const Detail = (props) => {
             }}
           />
         ))}
-        {props.user !== null && props.user.username === detail.createdBy ? authenticatedOptions : unauthenticatedOptions}
+        {props.user !== null && props.user.username === detail.createdBy
+          ? authenticatedOptions
+          : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>

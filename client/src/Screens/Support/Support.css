@@ -12,13 +12,14 @@ header {
 
 .support-left {
   background: #f0f0f0;
-  padding: 1em;
+  width: 50%;
+  padding: 2em;
   border-radius: 10px;
   font-family: "Merriweather", serif;
 }
 
 .support-content {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .support-team {
@@ -27,9 +28,30 @@ header {
 
 .support-right {
   width: 50%;
+  font-family: "Merriweather", serif;
 }
 
 #contact-message {
   resize: none;
-  height: 6.5em;
+  height: 300px;
+}
+
+.form-bottom {
+  display: flex;
+}
+
+.contact-submit {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  float: right;
+  padding: 10px 20px;
+}
+
+#contact-alert {
+  font-size: 12px;
+  width: 100%;
+  margin: 0 0 0 10px;
 }
