@@ -46,7 +46,7 @@ const Detail = (props) => {
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button>Add to cart</button>
+        <button onClick={handleAddProduct(product)}>Add to cart</button>
       </div>
     </>
   );
