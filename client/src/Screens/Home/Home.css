@@ -2,9 +2,11 @@
   width: 300px;
 }
 
-.container {
+.home-container {
   display: flex;
+  width: 80vw;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .home-best-sellers {
