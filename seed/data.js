@@ -23,7 +23,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
@@ -39,7 +39,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
@@ -55,7 +55,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
@@ -71,7 +71,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
@@ -87,7 +87,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
@@ -103,7 +103,7 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
+      color: ["black", 'gold', 'brown'],
       createdBy: "bruno"
       //  category: {
       //   type: String,
