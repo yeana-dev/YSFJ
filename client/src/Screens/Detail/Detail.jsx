@@ -46,7 +46,7 @@ const Detail = (props) => {
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button>Add to cart</button>
+        <button onClick={handleAddProduct(product)}>Add to cart</button>
       </div>
     </>
   );
@@ -65,7 +65,9 @@ const Detail = (props) => {
             }}
           />
         ))}
-        {props.user !== null && props.user.username === detail.createdBy ? authenticatedOptions : unauthenticatedOptions}
+        {props.user !== null && props.user.username === detail.createdBy
+          ? authenticatedOptions
+          : unauthenticatedOptions}
         <div className="detail">
           <img src={renderedImage} alt="glasses" id="rendered-image" />
           <div className="name">{detail.name}</div>

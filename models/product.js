@@ -10,6 +10,7 @@ const Product = new Schema(
     price: { type: Number, required: true },
     color: { type: String, required: true },
     createdBy: { type: String, required: true }
+    
     //  category: {
     //   type: String,
     //   enum: ["glasses" "sunglasses"],
