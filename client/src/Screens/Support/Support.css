@@ -7,7 +7,8 @@ header {
 .support-container {
   display: flex;
   gap: 2em;
-  margin-top: 5px;
+  width: 80vw;
+  margin: 5px auto;
 }
 
 .support-left {
@@ -54,4 +55,16 @@ header {
   font-size: 12px;
   width: 100%;
   margin: 0 0 0 10px;
+}
+
+@media (max-width: 990px) {
+  .support-container {
+    flex-direction: column;
+  }
+  .support-left {
+    width: 100%;
+  }
+  .support-right {
+    width: 100%;
+  }
 }
