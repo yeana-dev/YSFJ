@@ -8,9 +8,7 @@
   width: 500px;
   margin: 0 auto;
 }
-.new-product {
 
-}
 .create-form {
   justify-content: center;
   align-items: center;
@@ -22,10 +20,9 @@
  
 }
 .productCreate-image {
-  width: 300px;
+  
   object-fit: contain;
-  padding-right: 800px;
-  padding-left: 100px;
+  
 }
 .productCreate-image2 {
   width: 200px;

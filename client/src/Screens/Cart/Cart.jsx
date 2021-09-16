@@ -30,33 +30,12 @@ function Cart(props) {
     setSearchResult(results);
   };
 
-<<<<<<< HEAD
-  const handleAddProduct = (products) => {
-    const ProductExist = cartProducts.find((products) => products === products.id);
-    if (ProductExist) {
-      setCartProducts(
-        cartProducts.map((products) =>
-        products !== products.id
-            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
-            : products
-        )
-      );
-    } else {
-      setCartProducts([...cartProducts, { ...ProductExist, quantity: 1 }]);
-    }
-  };
-  const totalPrice = cartProducts.reduce(
-    (price, product) => price + product.quantity * product.price,
-    0
-  );
-=======
   const handleSubmit = (event) => event.preventDefault();
 
   // const handleDelete = () => {
   //   deleteCartProduct(products.userId);
   //   history.push("/cart");
   // };
->>>>>>> 2f7f7439ef24b058b88fafbce978a46c7dd48258
 
   return (
     <Layout user={props.user}>

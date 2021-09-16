@@ -60,7 +60,7 @@ const ProductCreate = (props) => {
             <img
               className="productCreate-image2"
               src="https://i.imgur.com/6zpwLsM.jpg"
-              alt="side banner"
+              alt="preview"
             />
 
             <input

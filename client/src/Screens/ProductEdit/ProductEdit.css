@@ -14,16 +14,29 @@
   align-items: center;
 }
 .image-container img {
-  width: 100%;
+  width: 50%;
   height: 300px;
-  background-color: #0c0b0b;
- 
+}
+.image-container {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+.new-product {
+  color: white;
+  width: 50%;
+  font-family: 'Merriweather', serif;
+  font-size: xxx-large ;
+}
+.preview-image {
+  width: 300px;
+}
+.glassImg-container2 {
+  padding-left: 100px;
 }
 .productEdit-image {
-  width: 300px;
   object-fit: contain;
-  padding-right: 800px;
-  padding-left: 100px;
 }
 
 .edit-title {
@@ -35,7 +48,7 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.image-input-0{
+.image-input-0 {
   padding: 3em;
 
   width: 100%;
@@ -45,7 +58,7 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.image-input-1{
+.image-input-1 {
   padding: 3em;
 
   width: 100%;
