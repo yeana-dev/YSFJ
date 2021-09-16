@@ -8,7 +8,7 @@ const Product = new Schema(
     description: { type: String, required: true },
     price: { type: Number, required: true },
     color: { type: Array, required: true },
-    createdBy: { type: String, required: true },
+    createdBy: { type: String, required: true }
     //  category: {
     //   type: String,
     //   enum: ["glasses" "sunglasses"],
