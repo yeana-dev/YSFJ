@@ -2,9 +2,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
+import { useParams } from "react-router";
 
 import "./Navigation.css";
+const User = () => {
+  const params = useParams();
 
+  return (<h1>{params.id}</h1>
+  )
+}
 const authenticatedOptions = (
   <>
     <Link className="link" to="/add-product">
@@ -13,6 +19,7 @@ const authenticatedOptions = (
     <Link className="link" to="/sign-out">
       <button>SIGN OUT</button>
     </Link>
+    <Link className="link" to="/:id/cart">Cart</Link>
   </>
 );
 
