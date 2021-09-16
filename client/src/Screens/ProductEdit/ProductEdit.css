@@ -37,7 +37,37 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.edit-image-link {
+.image-input-0{
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-1{
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-2 {
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-3 {
   padding: 3em;
 
   width: 100%;

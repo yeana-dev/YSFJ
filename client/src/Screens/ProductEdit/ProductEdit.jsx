@@ -54,7 +54,7 @@ const ProductEdit = (props) => {
     <Layout user={props.user}>
       <div className="image-container">
         <img
-          className="productCreate-image"
+          className="productEdit-image"
           src="https://i.imgur.com/ZyxC5VY.png?1"
           alt="header"
         />
@@ -67,7 +67,7 @@ const ProductEdit = (props) => {
           alt="preview"
         />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="edit-form">
         <input
           className="image-input-0"
           placeholder="Image Link"
