@@ -24,7 +24,7 @@ const Detail = (props) => {
 
   const handleDelete = () => {
     deleteProduct(detail._id);
-    history.push("/products");
+    history.push("/delete");
   };
 
   if (!isLoaded) {
