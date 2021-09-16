@@ -7,7 +7,6 @@
 .products-image,
 .middle-wrapper {
   width: 21%;
-
   object-fit: cover;
 }
 
