@@ -1,6 +1,6 @@
 import "./Detail.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 
 const Detail = (props) => {
 

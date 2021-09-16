@@ -12,7 +12,7 @@ import SignOut from "./Screens/SignOut/SignOut";
 import Support from "./Screens/Support/Support";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./Services/users";
-
+import Cart from "./Screens/Cart/Cart";
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -23,7 +23,6 @@ const App = () => {
     };
     fetchUser();
   }, []);
-
   return (
     <div className="app">
       <Switch>
@@ -53,6 +52,9 @@ const App = () => {
         </Route>
         <Route exact path="/support">
           <Support user={user} />
+        </Route>
+        <Route exact path={`/cart`}>
+          <Cart user={user} />
         </Route>
         <Route exact path="/delete">
           <Delete user={user} />
