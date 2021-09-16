@@ -32,7 +32,7 @@ function Products(props) {
     <Layout user={props.user}>
       <div className="products-wrapper">
         <img
-          className="products-image1"
+          className="products-image"
           src="https://images.unsplash.com/photo-1506560268771-b749c701c371?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBnbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
           alt="side banner"
         />
@@ -54,7 +54,7 @@ function Products(props) {
           </div>
         </div>
         <img
-          className="products-image2"
+          className="products-image"
           src="https://images.unsplash.com/photo-1514136649217-b627b4b9cfb2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBnbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
           alt="side-banner2"
         />

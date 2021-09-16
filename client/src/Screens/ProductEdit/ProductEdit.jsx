@@ -7,7 +7,7 @@ import { getDetail, updateProduct } from "../../Services/products";
 const ProductEdit = (props) => {
   const [product, setProduct] = useState({
     title: "",
-    image_url: "",
+    image_url: [],
     description: "",
     price: "",
     color: "",
@@ -26,12 +26,18 @@ const ProductEdit = (props) => {
   }, [id]);
 
   const handleChange = (event) => {
-    const { title, value } = event.target;
-    setProduct({
-      ...product,
-      [title]: value,
-    });
-    setPreviewImage(product.image_url);
+    const { name, value, dataset } = event.target;
+    const { id } = dataset;
+    if (name === "image_url") {
+      const updatedProduct = { ...product };
+      updatedProduct.image_url[id] = value;
+      setProduct(updatedProduct);
+    } else {
+      setProduct({
+        ...product,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -50,17 +56,55 @@ const ProductEdit = (props) => {
         <img
           className="productCreate-image"
           src="https://i.imgur.com/ZyxC5VY.png?1"
-          alt="header image"
+          alt="header"
         />
         <div className="new-product">New Products</div>
       </div>
       <div className="glassImg-container2">
         <img
-          className="edit-product-image"
-          src={previewImage}
-          alt={product.title}
+          className="preview-image"
+          src={product.image_url[0]}
+          alt="preview"
         />
       </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="image-input-0"
+          placeholder="Image Link"
+          value={product.image_url[0]}
+          name="image_url"
+          data-id="0"
+          required
+          onChange={handleChange}
+        />
+        <input
+          className="image-input-1"
+          placeholder="Image Link"
+          value={product.image_url[1]}
+          name="image_url"
+          data-id="1"
+          required
+          onChange={handleChange}
+        />
+        <input
+          className="image-input-2"
+          placeholder="Image Link"
+          value={product.image_url[2]}
+          name="image_url"
+          data-id="2"
+          required
+          onChange={handleChange}
+        />
+        <input
+          className="image-input-3"
+          placeholder="Image Link"
+          value={product.image_url[3]}
+          name="image_url"
+          data-id="3"
+          required
+          onChange={handleChange}
+        />
+      </form>
       <div className="content-container">
         <div className="product-edit">
           <form className="edit-form" onSubmit={handleSubmit}>
@@ -73,23 +117,6 @@ const ProductEdit = (props) => {
               autoFocus
               onChange={handleChange}
             />
-            <input
-              className="edit-image-link"
-              placeholder="Image Link"
-              value={product.image_url}
-              name="image_url"
-              required
-              onChange={handleChange}
-            />
-            <input
-              className="edit-image-link"
-              placeholder="Image Link"
-              value={product.image_url}
-              name="image_url"
-              required
-              onChange={handleChange}
-            />
-
             <input
               className="edit-price"
               placeholder="Price"
