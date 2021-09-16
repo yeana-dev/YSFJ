@@ -36,7 +36,7 @@ const insertData = async () => {
       price: 99,
       color: ["white", "black", "pink"],
       createdBy: "bruno",
-      userId: user1
+      userId: user1,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -54,7 +54,7 @@ const insertData = async () => {
       price: 105,
       color: ["black", "brown", "gold"],
       createdBy: "bruno",
-      userId: user1
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -73,7 +73,7 @@ const insertData = async () => {
       price: 115,
       color: ["gold", "silver"],
       createdBy: "bruno",
-      userId: user1
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -92,7 +92,7 @@ const insertData = async () => {
       price: 105,
       color: ["black", "brown", "darkgreen"],
       createdBy: "bruno",
-      userId: user1
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -111,7 +111,7 @@ const insertData = async () => {
       price: 95,
       color: ["black", "brown", "white"],
       createdBy: "bruno",
-      userId: user2
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -130,7 +130,7 @@ const insertData = async () => {
       price: 95,
       color: ["black", "brown", "darkgreen", "white"],
       createdBy: "bruno",
-      userId: user2
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -149,7 +149,7 @@ const insertData = async () => {
       price: 95,
       color: ["black", "brown"],
       createdBy: "bruno",
-      userId: user2
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -168,15 +168,13 @@ const insertData = async () => {
       price: 95,
       color: ["brown", "pink"],
       createdBy: "bruno",
-      userId: user2
+      userId: user2,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
       // required: true, }: Post- MVP
     },
   ];
-  await Product.insertMany(products);
-  console.log("Created!");
 
   await Product.insertMany(products)
   console.log('Created users & products!')
