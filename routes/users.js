@@ -9,5 +9,6 @@ router.get("/verify", controllers.verify);
 
 router.get('/users/:id', controllers.getUser)
 
-router.get('/users/:id/products', controllers.getUserProducts)
+// router.get('/users/:id/products', controllers.getUserProducts)
+router.get('/users/:id/cart', controllers.getCart)
 export default router;

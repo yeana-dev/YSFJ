@@ -52,7 +52,7 @@ const App = () => {
         <Route exact path="/support">
           <Support user={user} />
         </Route>
-        <Route exact path={`/users/:id/poducts`}>
+        <Route exact path={`/cart`}>
           <Cart user={user} />
         </Route>
       </Switch>

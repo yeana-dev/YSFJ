@@ -3,21 +3,25 @@ import { useState, useEffect } from "react";
 import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
-import { getUserProducts } from "../../Services/users"
+import { getCart } from "../../Services/users"
+// import { deleteCartProduct } from "../../Services/users";
+// import { useHistory as history } from "react-router";
 
-function Products(props) {
+function Cart(props) {
+  console.log(props.user.id)
   const [products, setProducts] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const allProducts = await getUserProducts();
+      const allProducts = await getCart(props.user.id);
       setProducts(allProducts);
       console.log(allProducts);
+
       setSearchResult(allProducts);
     };
     fetchProducts();
-  }, []);
+  }, [props.user.id]);
 
   const handleSearch = (event) => {
     const results = products.filter((detail) =>
@@ -27,6 +31,11 @@ function Products(props) {
   };
 
   const handleSubmit = (event) => event.preventDefault();
+
+  // const handleDelete = () => {
+  //   deleteCartProduct(products.userId);
+  //   history.push("/cart");
+  // };
 
   return (
     <Layout user={props.user}>
@@ -62,4 +71,4 @@ function Products(props) {
     </Layout>
   );
 }
-export default Products;
+export default Cart;
