@@ -1,6 +1,5 @@
-
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
 const Product = new Schema(
   {
@@ -15,7 +14,7 @@ const Product = new Schema(
     //   enum: ["glasses" "sunglasses"],
     // required: true, }: Post- MVP
   },
-  { timestamps: true },
-)
+  { timestamps: true }
+);
 
-export default mongoose.model('products', Product)
+export default mongoose.model("products", Product);
