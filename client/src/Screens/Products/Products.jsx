@@ -5,6 +5,7 @@ import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
 import { getProducts } from "../../Services/products";
+import { Link } from "react-router-dom";
 
 function Products(props) {
   const [products, setProducts] = useState([]);
@@ -85,7 +86,29 @@ function Products(props) {
                 );
               })}
           </div>
+          <div className='bottom-image-links'>
+            <Link className='support-link' to='/support'>
+              <Card id="link-banner1" >
+                <Card.Img id='bottom-image1' src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
+                <Card.ImgOverlay>
+                  <Card.Text id='bottom-image-text1'>
+                    <p className='bottom-message1' id='p-message' >Contact an engineer for any questions involving YSFJ</p>
+                  </Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+            </Link>
 
+            <Card id="link-banner2" >
+              <Card.Img id='bottom-image2' src="https://images.unsplash.com/photo-1512793988391-0716d78a18ac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBnbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
+              <Card.ImgOverlay>
+                <Card.Text id='bottom-image-text2'>
+                  <p className='sale-message2' id='p-sale' >OFFER ONLY VALID THRU 9-9 TO 10-11</p>
+                </Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+
+
+          </div>
         </div>
         <img
           className="products-image"
