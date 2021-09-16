@@ -85,24 +85,12 @@ function Products(props) {
             <div className='bottom-image-links'>
 
               <Link className='support-link1' to='/support'>
-                <Card id="link-banner1" >
-                  <Card.Img id='bottom-image1' src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
-                  <Card.ImgOverlay>
-                    <Card.Text id='bottom-image-text1'>
-                      <p className='bottom-message1' >Contact an professional to get any questions on frames</p>
-                    </Card.Text>
-                  </Card.ImgOverlay>
-                </Card>
+                <img className='support-img-1' src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
+                <p className='message-1' >Contact an professional to get any questions on frames</p>
               </Link>
               <Link className='support-link2' to='/newsletter'>
-                <Card id="link-banner2" >
-                  <Card.Img id='bottom-image2' src="https://images.unsplash.com/photo-1553544923-37efbe6ff816?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
-                  <Card.ImgOverlay>
-                    <Card.Text id='bottom-image-text2'>
-                      <p className='bottom-message2'>Subscribe to our news letter</p>
-                    </Card.Text>
-                  </Card.ImgOverlay>
-                </Card>
+                <img className='support-img-2' src="https://images.unsplash.com/photo-1553544923-37efbe6ff816?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
+                <p className='message-2'>Subscribe to our news letter</p>
               </Link>
 
             </div>

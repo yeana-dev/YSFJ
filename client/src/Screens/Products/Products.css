@@ -16,15 +16,12 @@
   margin: 3vh auto;
 }
 
-.sale-message,
-.sale-message2,
-.bottom-message1,
-.bottom-message2 {
+.sale-message,.sale-message2{
   color: azure;
   font-family: "Merriweather", serif;
 }
 
-.sale-message,.bottom-message1,.bottom-message2 {
+.sale-message {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,19 +42,35 @@
   height: 300px;
   object-fit: cover;
 }
-
 .bottom-image-links{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 .support-link1,.support-link2{
-  width: 40%;
+  color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+
+    width: 25%;
+    font-family:"Merriweather", serif;
 }
 
-#link-banner{
-  width: 25%;
+.support-img-1,.support-img-2{
+  width: 25vw;
+  height: 75vh;
 }
+
+.message-1,.message-2{
+  text-align: center;
+  font-weight: 800;
+}
+
+
+
 
 @media (max-width: 1380px) {
   .sale-message {
