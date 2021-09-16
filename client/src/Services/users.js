@@ -49,3 +49,21 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const getCart = async (userId) => {
+  try {
+    const response = await api.get(`/users/${userId}/cart`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteCartProduct = async (userId, productId) => {
+  try {
+    const response = await api.delete(`/users/${userId}/cart/${productId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

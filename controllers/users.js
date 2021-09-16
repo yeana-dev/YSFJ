@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
+import Product from '../models/product.js'
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
@@ -72,3 +73,40 @@ export const verify = async (req, res) => {
     res.status(401).send("Not Authorized");
   }
 };
+
+export const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).populate('products')
+    res.json(user)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: error.message })
+  }
+}
+
+export const getCart = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const userProducts = await Product.find({ userId: user._id })
+    res.json(userProducts)
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({ error: error.message })
+  }
+}
+
+export const deleteCartProduct = async (req, res) => {
+  try {
+    if (await User.findById(req.params.id)) {
+      const deleted = await Product.findByIdAndDelete(req.params.productId)
+      if (deleted) {
+        return res.status(200).send('Product deleted')
+      }
+      throw new Error(`Product ${req.params.productId} not found`)
+    }
+    throw new Error(`User ${req.params.id} does not exist!`)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: error.message })
+  }
+}

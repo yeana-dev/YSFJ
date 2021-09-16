@@ -10,4 +10,6 @@ router.post('/products', restrict, controllers.createProduct)
 router.put('/products/:id', restrict, controllers.updateProduct)
 router.delete('/products/:id', restrict, controllers.deleteProduct)
 
+// router.put('/users/:id/cart/:product', controllers.updateProduct)
+
 export default router
