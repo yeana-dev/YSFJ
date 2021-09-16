@@ -7,7 +7,6 @@
 .products-image,
 .middle-wrapper {
   width: 21%;
-
   object-fit: cover;
 }
 
@@ -22,7 +21,6 @@
   flex-wrap: wrap;
   margin-top: 90px;
 }
-
 
 .sale-message,.sale-message2{
   color: azure;
@@ -75,9 +73,6 @@
 
 @media (max-width: 990px) {
   .products-wrapper img {
-
-@media (max-width: 1200px) {
-  .products-image {
     display: none;
   }
   .products-wrapper {
