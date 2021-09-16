@@ -4,77 +4,88 @@
   margin: auto 0;
   justify-content: center;
 }
-.products-image,
-.middle-wrapper {
-  width: 21%;
-  object-fit: cover;
-}
 
 .middle-wrapper {
-  min-width: 50vw;
-  margin-left: 59px;
-  margin-right: 45px;
+  width: 60vw;
+  margin: 0 auto;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 90px;
+  margin: 3vh auto;
 }
 
-.sale-message,.sale-message2{
+.sale-message,
+.sale-message2,
+.bottom-message1,
+.bottom-message2 {
   color: azure;
   font-family: "Merriweather", serif;
 }
 
-.sale-message{
+.sale-message,.bottom-message1,.bottom-message2 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.sale-message2{
+.sale-message2 {
   position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@media (max-width:1380px) {
-  .sale-message{
+#sale-banner {
+  width: 100%;
+}
+
+#horiz-image {
+  height: 300px;
+  object-fit: cover;
+}
+
+.bottom-image-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.support-link1,.support-link2{
+  width: 40%;
+}
+
+#link-banner{
+  width: 25%;
+}
+
+@media (max-width: 1380px) {
+  .sale-message {
     font-size: revert;
   }
-  .sale-message2{
+  .sale-message2 {
     font-size: small;
   }
-  
 }
 
-@media (max-width:1282px){
-  .products-image2,
-.products-image1,
-.middle-wrapper {
-  width: 20%;
-}
-
-.middle-wrapper {
-  width: 50%;
-  margin-left: 59px;
-  margin-right: 45px;
-}
-
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 90px;
-}
-
-}
-
-@media (max-width: 990px) {
-  .products-wrapper img {
-    display: none;
+@media (max-width: 1282px) {
+  .middle-wrapper {
+    width: 20%;
   }
+
+  .middle-wrapper {
+    width: 50%;
+    margin-left: 59px;
+    margin-right: 45px;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 90px;
+  }
+}
+@media (max-width: 990px) {
   .products-wrapper {
     width: 100%;
   }
