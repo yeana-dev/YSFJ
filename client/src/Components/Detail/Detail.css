@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 .detail-products {
   width: 30%;
-  /* margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px; */
   margin: 20px 10px;
   font-family: "Merriweather", serif;
 }
@@ -15,13 +11,13 @@
 }
 
 .detail-products button {
-  width:25px;
+  width: 25px;
   height: 25px;
   border-radius: 1000px;
-
+  border: none;
 }
 
-.selected{
-  border:5px solid red;
+#selected {
+  box-sizing: border-box;
+  border: 1px solid red;
 }
-
