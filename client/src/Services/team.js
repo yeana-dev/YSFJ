@@ -21,6 +21,6 @@ export const team = [
     name: "Francisco Rosado",
     github: "https://github.com/FranciscoPink",
     linkedin: "hhttps://www.linkedin.com/in/francisco-rosado-b652151a9",
-    email: "franciscorosadomunoz@icloud.com",
+    email: "francisco.rosado.dev@gmail.com",
   },
 ];

@@ -2,9 +2,11 @@
   width: 300px;
 }
 
-.container {
+.home-container {
   display: flex;
+  width: 80vw;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .home-best-sellers {
@@ -15,4 +17,8 @@
   text-align: center;
   font-size: 26px;
   letter-spacing: 10px;
+}
+
+.home-best-sellers .products {
+  width: 70vw;
 }

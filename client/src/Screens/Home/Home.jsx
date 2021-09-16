@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = (props) => {
   return (
     <Layout user={props.user}>
-      <div className="container">
+      <div className="home-container">
         <HomeCarousel />
       </div>
       <div className="home-best-sellers">

@@ -5,6 +5,7 @@ import Products from "./Screens/Products/Products";
 import ProductCreate from "./Screens/ProductCreate/ProductCreate";
 import ProductEdit from "./Screens/ProductEdit/ProductEdit";
 import Detail from "./Screens/Detail/Detail";
+import Delete from "./Screens/Delete/Delete"
 import SignUp from "./Screens/SignUp/SignUp";
 import SignIn from "./Screens/SignIn/SignIn";
 import SignOut from "./Screens/SignOut/SignOut";
@@ -22,7 +23,6 @@ const App = () => {
     };
     fetchUser();
   }, []);
-
   return (
     <div className="app">
       <Switch>
@@ -53,9 +53,13 @@ const App = () => {
         <Route exact path="/support">
           <Support user={user} />
         </Route>
-        <Route exact path="/cart">
+        <Route exact path={`/cart`}>
           <Cart user={user} />
         </Route>
+        <Route exact path="/delete">
+          <Delete user={user} />
+        </Route>
+
       </Switch>
     </div>
   );
