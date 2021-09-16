@@ -14,6 +14,7 @@ const ProductEdit = (props) => {
   });
 
   const [isUpdated, setUpdated] = useState(false);
+  const [previewImage, setPreviewImage] = useState(product.image_url[0]);
   let { id } = useParams();
 
   useEffect(() => {
@@ -53,57 +54,65 @@ const ProductEdit = (props) => {
     <Layout user={props.user}>
       <div className="image-container">
         <img
-          className="productCreate-image"
+          className="productEdit-image"
           src="https://i.imgur.com/ZyxC5VY.png?1"
           alt="header"
         />
         <div className="new-product">New Products</div>
       </div>
-      <div className="glassImg-container2">
-        <img
-          className="preview-image"
-          src={product.image_url[0]}
-          alt="preview"
-        />
+      <div className="content-container">
+        <div className="product-edit">
+          <div className="glassImg-container2">
+            <img
+              className="preview-image"
+              src={product.image_url[0]}
+              alt="preview"
+            />
+          </div>
+        </div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          className="image-input-0"
-          placeholder="Image Link"
-          value={product.image_url[0]}
-          name="image_url"
-          data-id="0"
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="image-input-1"
-          placeholder="Image Link"
-          value={product.image_url[1]}
-          name="image_url"
-          data-id="1"
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="image-input-2"
-          placeholder="Image Link"
-          value={product.image_url[2]}
-          name="image_url"
-          data-id="2"
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="image-input-3"
-          placeholder="Image Link"
-          value={product.image_url[3]}
-          name="image_url"
-          data-id="3"
-          required
-          onChange={handleChange}
-        />
-      </form>
+      <div className="content-container">
+        <div className="product-edit">
+          <form onSubmit={handleSubmit} className="edit-form">
+            <input
+              className="image-input-0"
+              placeholder="Image Link"
+              value={product.image_url[0]}
+              name="image_url"
+              data-id="0"
+              required
+              onChange={handleChange}
+            />
+            <input
+              className="image-input-1"
+              placeholder="Image Link"
+              value={product.image_url[1]}
+              name="image_url"
+              data-id="1"
+              required
+              onChange={handleChange}
+            />
+            <input
+              className="image-input-2"
+              placeholder="Image Link"
+              value={product.image_url[2]}
+              name="image_url"
+              data-id="2"
+              required
+              onChange={handleChange}
+            />
+            <input
+              className="image-input-3"
+              placeholder="Image Link"
+              value={product.image_url[3]}
+              name="image_url"
+              data-id="3"
+              required
+              onChange={handleChange}
+            />
+          </form>
+        </div>
+      </div>
       <div className="content-container">
         <div className="product-edit">
           <form className="edit-form" onSubmit={handleSubmit}>
