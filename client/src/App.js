@@ -22,7 +22,6 @@ const App = () => {
     };
     fetchUser();
   }, []);
-
   return (
     <div className="app">
       <Switch>
@@ -53,7 +52,7 @@ const App = () => {
         <Route exact path="/support">
           <Support user={user} />
         </Route>
-        <Route exact path="/cart">
+        <Route exact path={`/users/:id/poducts`}>
           <Cart user={user} />
         </Route>
       </Switch>

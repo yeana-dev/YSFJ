@@ -50,9 +50,9 @@ export const verifyUser = async () => {
   return false;
 };
 
-export const getUserProduct = async (userId, productId) => {
+export const getUserProducts = async (userId, productId) => {
   try {
-    const response = await api.get(`/users/${userId}/cart/${productId}`)
+    const response = await api.get(`/users/${userId}/products`)
     return response.data
   } catch (error) {
     throw error

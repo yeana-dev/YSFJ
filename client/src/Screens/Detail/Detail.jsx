@@ -11,7 +11,6 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
-  // const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,7 +28,7 @@ const Detail = (props) => {
   };
 
   if (!isLoaded) {
-    return <h1>Oops... There's a problem!</h1>;
+    return <h1>Loading...</h1>;
   }
   const authenticatedOptions = (
     <>
@@ -43,19 +42,11 @@ const Detail = (props) => {
       </div>
     </>
   );
-  const handleAddProduct = () => {
-    try {
-      const response = await api.put(`/products/${id}`, detail)
-      return response.data
-    } catch (error) {
-      throw error
-    }
-  }
 
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button onClick={handleAddProduct}>Add to cart</button>
+        <button>Add to cart</button>
       </div>
     </>
   );

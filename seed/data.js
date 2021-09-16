@@ -10,7 +10,7 @@ const insertData = async () => {
     username: "bruno",
     email: "root@super.gmail.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssw0Rd55!", 11),
-    products: ["6142479ac11fbac715f3be8d"]
+    products: []
   });
   await user1.save();
 
@@ -18,7 +18,7 @@ const insertData = async () => {
     username: 'bianca',
     email: 'b.anca@super.gmail.com',
     password_digest: await bcrypt.hash('!$h0pp3R1', 11),
-    products: ["6142479ac11fbac715f3be8d"],
+    products: [],
   })
   await user2.save()
 
@@ -32,8 +32,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user1
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -48,8 +49,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user1
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -64,8 +66,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user2
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -80,8 +83,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user2
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -96,8 +100,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user2
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -112,8 +117,9 @@ const insertData = async () => {
       ],
       description: "description",
       price: 45,
-      color: "black",
-      createdBy: "bruno"
+      color: ["black", 'gold', 'brown'],
+      createdBy: "bruno",
+      userId: user2
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],
@@ -122,6 +128,14 @@ const insertData = async () => {
   ];
   await Product.insertMany(products);
   console.log("Created!");
+
+  await Product.insertMany(products)
+  console.log('Created users & products!')
+
+  user1.products = await Product.find({ userId: user1 })
+  await user1.save()
+  user2.products = await Product.find({ userId: user2 })
+  await user2.save()
 
   db.close();
 };

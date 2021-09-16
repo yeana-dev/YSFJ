@@ -18,7 +18,7 @@
 #navbar-logo {
   font-family: "Abril Fatface", cursive;
   font-size: 40px;
-  text-align: center;
+  /* text-align: center; */
   margin-right: auto;
 }
 
@@ -44,8 +44,8 @@
   border-bottom: 4px solid black;
 }
 
-#navbar-toggle {
-  background-color: white;
+.nav-item {
+  padding: 10px 0;
 }
 
 .navbar-top {
@@ -53,7 +53,7 @@
   align-items: center;
 }
 
-.navbar-text {
+#nav-bar-text {
   font-family: "Roboto Condensed", sans-serif;
   display: flex;
   font-size: 14px;
@@ -76,11 +76,23 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
-  transition: all 250ms ease-in-out;
 }
 
 .link button:hover {
   background-color: #5b5b5b;
   color: whitesmoke;
   transition: all 250ms ease-in-out;
+}
+
+@media (max-width: 990px) {
+  #nav-bar-text {
+    position: unset;
+  }
+  #navbar-toggle-button {
+    border: none;
+    font-size: 30px;
+  }
+  .navbar-top {
+    gap: 15px;
+  }
 }
