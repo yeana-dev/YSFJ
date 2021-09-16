@@ -42,7 +42,7 @@ const Detail = (props) => {
       </div>
     </>
   );
-  const handleAddProduct = () => {
+  const handleAddProduct = (props) => {
     const ProductExist = cartProducts.find(
       (products) => products === products.id
     );

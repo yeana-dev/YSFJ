@@ -1,4 +1,5 @@
 import Products from "../Products/Products";
+import Detail from "../../Components/Detail/Detail";
 import React, { useState } from "react";
 
 
@@ -22,7 +23,7 @@ const Cart = () => {
     }
   };
 
-  const handleAddProduct = () => {
+  const handleAddProduct = (products) => {
     const ProductExist = cartProducts.find((products) => products === products.id);
     if (ProductExist) {
       setCartProducts(
