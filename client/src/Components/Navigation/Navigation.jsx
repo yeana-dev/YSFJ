@@ -45,7 +45,7 @@ const Navigation = ({ user }) => {
           id="navbar-toggle-button"
           aria-controls="basic-navbar-nav"
         >
-          <i class="fas fa-bars"></i>
+          <i className="fas fa-bars"></i>
         </Navbar.Toggle>
         <Navbar.Brand href="/" id="navbar-logo">
           YSFJ
