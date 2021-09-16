@@ -59,11 +59,11 @@ export const getCart = async (userId) => {
   }
 }
 
-export const deleteCartProduct = async (userId, productId) => {
-  try {
-    const response = await api.delete(`/users/${userId}/cart/${productId}`)
-    return response.data
-  } catch (error) {
-    throw error
-  }
-}
+// export const deleteCartProduct = async (userId, productId) => {
+//   try {
+//     const response = await api.delete(`/users/${userId}/cart/${productId}`)
+//     return response.data
+//   } catch (error) {
+//     throw error
+//   }
+// }
