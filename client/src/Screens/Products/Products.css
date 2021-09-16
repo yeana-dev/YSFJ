@@ -4,15 +4,14 @@
   margin: auto 0;
   justify-content: center;
 }
-.products-image2,
-.products-image1,
+.products-image,
 .middle-wrapper {
   width: 21%;
   object-fit: cover;
 }
 
 .middle-wrapper {
-  width: 50%;
+  min-width: 50vw;
   margin-left: 59px;
   margin-right: 45px;
 }
