@@ -49,3 +49,20 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const getUserProduct = async (userId, productId) => {
+  try {
+    const response = await api.get(`/users/${userId}/cart/${productId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+  // export const deleteUserProduct = async (userId, productId) => {
+  //   try {
+  //     const response = await api.get(`/users/${userId}/products/${productId}`)
+  //     return response.data
+  //   } catch (error) {
+  //     throw error
+  //   }

@@ -10,7 +10,7 @@ const insertData = async () => {
     username: "bruno",
     email: "root@super.gmail.com",
     password_digest: await bcrypt.hash("!a$ecureP@ssw0Rd55!", 11),
-    products: []
+    products: ["6142479ac11fbac715f3be8d"]
   });
   await user1.save();
 
@@ -18,7 +18,7 @@ const insertData = async () => {
     username: 'bianca',
     email: 'b.anca@super.gmail.com',
     password_digest: await bcrypt.hash('!$h0pp3R1', 11),
-    products: [],
+    products: ["6142479ac11fbac715f3be8d"],
   })
   await user2.save()
 

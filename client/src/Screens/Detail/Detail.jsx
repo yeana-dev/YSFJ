@@ -11,7 +11,8 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
-  const [cartProducts, setCartProducts] = useState([]);
+  // const [cartProducts, setCartProducts] = useState([]);
+
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
@@ -28,7 +29,7 @@ const Detail = (props) => {
   };
 
   if (!isLoaded) {
-    return <h1>Loading...</h1>;
+    return <h1>Oops... There's a problem!</h1>;
   }
   const authenticatedOptions = (
     <>
@@ -43,21 +44,13 @@ const Detail = (props) => {
     </>
   );
   const handleAddProduct = () => {
-    const ProductExist = cartProducts.find(
-      (products) => products === products.id
-    );
-    if (ProductExist) {
-      setCartProducts(
-        cartProducts.map((products) =>
-          products !== products.id
-            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
-            : products
-        )
-      );
-    } else {
-      setCartProducts([...cartProducts, { ...ProductExist, quantity: 1 }]);
+    try {
+      const response = await api.put(`/products/${id}`, detail)
+      return response.data
+    } catch (error) {
+      throw error
     }
-  };
+  }
 
   const unauthenticatedOptions = (
     <>

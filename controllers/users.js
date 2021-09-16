@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
+import Product from '../models/product.js'
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
@@ -72,25 +73,25 @@ export const verify = async (req, res) => {
     res.status(401).send("Not Authorized");
   }
 };
-export const getUserCart = async (req, res) => {
+
+export const getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id)
-    const userCart = await Product.find({ userId: user._id })
-    res.json(userCart)
-  } catch (error) {
-    console.log(error.message)
-    res.status(500).json({ error: error.message })
-  }
-}
-export const updateUserCart = async (req, res) => {
-  try {
-    if (await User.findById(req.params.id)) {
-      const product = await Product.findByIdAndUpdate(_id, req.body, { new: true })
-      res.status(200).json(product)
-    }
-    throw new Error(`User ${req.params.id} does not exist!`)
+    const user = await User.findById(req.params.id).populate('products')
+    res.json(user)
   } catch (error) {
     console.log(error)
     res.status(500).json({ error: error.message })
   }
 }
+
+export const getUserProducts = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const userProducts = await Product.find({ userId: user._id })
+    res.json(userProducts)
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({ error: error.message })
+  }
+}
+
