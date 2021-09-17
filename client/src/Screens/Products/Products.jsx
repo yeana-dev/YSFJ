@@ -29,72 +29,78 @@ function Products(props) {
   };
 
   const handleSubmit = (event) => event.preventDefault();
-
-  const firstHalfArr = searchResult.slice(0, 3);
-  const secondHalfArr = searchResult.slice(3);
+  console.log(products);
+  console.log(searchResult);
+  const firstHalfArr = searchResult.slice(0, 6);
+  const secondHalfArr = searchResult.slice(6);
 
   return (
     <Layout user={props.user}>
-      <div className='products-wrapper'>
-        <div className="middle-wrapper">
-          <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
-          <div className="products">
-            {firstHalfArr.map((product, index) => {
-              return (
-                <Detail
-                  _id={product._id}
-                  title={product.title}
-                  image_url={product.image_url[0]}
-                  price={product.price}
-                  color={product.color}
-                  key={index}
-                />
-              );
-            })}
-            <Card id="sale-banner">
-              <Card.Img
-                id="horiz-image"
-                src="https://images.unsplash.com/photo-1512793988391-0716d78a18ac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBnbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-                alt="card-image"
+      <div className="glasses-product-list">
+        <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+        <header>GLASSES</header>
+        <div className="products">
+          {firstHalfArr.map((product, index) => {
+            return (
+              <Detail
+                _id={product._id}
+                title={product.title}
+                image_url={product.image_url[0]}
+                price={product.price}
+                color={product.color}
+                key={index}
               />
-              <Card.ImgOverlay>
-                <Card.Text id="sale-text">
-                  <h2 className="sale-message" id="h2-sale">
-                    FOR LIMITED TIME YOU CAN GET SELECTED GLASSES FOR 25% OFF
-                  </h2>
-                  <p className="sale-message2" id="p-sale">
-                    OFFER ONLY VALID THRU 9-9 TO 10-11
-                  </p>
-                </Card.Text>
-              </Card.ImgOverlay>
-            </Card>
-
-            {secondHalfArr.map((product, index) => {
-              return (
-                <Detail
-                  _id={product._id}
-                  title={product.title}
-                  image_url={product.image_url[0]}
-                  price={product.price}
-                  color={product.color}
-                  key={index}
-                />
-              );
-            })}
-
-            <div className='bottom-image-links'>
-
-              <Link className='support-link1' to='/support'>
-                <img className='support-img-1' src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
-                <p className='message-1' >Contact an professional to get any questions on frames</p>
-              </Link>
-              <Link className='support-link2' to='/newsletter'>
-                <img className='support-img-2' src="https://images.unsplash.com/photo-1553544923-37efbe6ff816?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="card-image" />
-                <p className='message-2'>Subscribe to our news letter</p>
-              </Link>
-
-            </div>
-          </div>
+            );
+          })}
+          <Card id="sale-banner">
+            <Card.Img
+              id="horiz-image"
+              src="https://images.unsplash.com/photo-1512793988391-0716d78a18ac?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGJsYWNrJTIwYW5kJTIwd2hpdGUlMjBnbGFzc2VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt="card-image"
+            />
+            <Card.ImgOverlay>
+              <Card.Text id="sale-text">
+                <h2 className="sale-message" id="h2-sale">
+                  FOR LIMITED TIME YOU CAN GET SELECTED GLASSES FOR 25% OFF
+                </h2>
+                <p className="sale-message2" id="p-sale">
+                  OFFER ONLY VALID THRU 9-9 TO 10-11
+                </p>
+              </Card.Text>
+            </Card.ImgOverlay>
+          </Card>
+          {secondHalfArr.map((product, index) => {
+            return (
+              <Detail
+                _id={product._id}
+                title={product.title}
+                image_url={product.image_url[0]}
+                price={product.price}
+                color={product.color}
+                key={index}
+              />
+            );
+          })}
+        </div>
+        <div className="bottom-image-links">
+          <Link className="support-link1" to="/support">
+            <img
+              className="support-img-1"
+              src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt="card-image"
+            />
+            <p className="message-1">
+              Contact an professional to get any questions on frames
+            </p>
+          </Link>
+          <Link className="support-link2" to="/newsletter">
+            <img
+              className="support-img-2"
+              src="https://images.unsplash.com/photo-1553544923-37efbe6ff816?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt="card-image"
+            />
+            <p className="message-2">Subscribe to our news letter</p>
+          </Link>
         </div>
       </div>
     </Layout>

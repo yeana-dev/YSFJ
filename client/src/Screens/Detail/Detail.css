@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 6em;
+  margin-top: 2em;
 }
 
 .detail-left {
@@ -45,6 +46,30 @@
 .detail-top-left .title {
   font-family: "Merriweather", serif;
   font-size: 40px;
+}
+
+.detail-color .product-color {
+  display: flex;
+  justify-content: space-around;
+}
+
+.selected-color span {
+  color: whitesmoke;
+  font-size: 12px;
+}
+
+.selected-color button {
+  border: 1px solid white;
+}
+
+.color-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  background-color: #2b2b2b5a;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .detail-top .price,

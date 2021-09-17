@@ -11,7 +11,7 @@ const Detail = (props) => {
 
   return (
     <div className="detail-products">
-      <Link className="card" to={`/products/${props._id}`}>
+      <Link className="product-card" to={`/products/${props._id}`}>
         <img
           className="product-image"
           src={props.image_url}
@@ -20,21 +20,20 @@ const Detail = (props) => {
         <div className="text-box">
           <div className="product-title">{props.title}</div>
           <div className="price">{`$${props.price}`}</div>
-          <div className="color-container">
-            <div className="color">{`Select from these colors:`} </div>
-          </div>
+        </div>
+        <div className="product-color">
+          {props.color.map((color, index) => (
+            <button
+              style={{ backgroundColor: color }}
+              id={`${selected === color ? `selected` : null}`}
+              key={index}
+              onClick={() => {
+                handleSelect(color);
+              }}
+            ></button>
+          ))}
         </div>
       </Link>
-      {props.color.map((color, index) => (
-        <button
-          style={{ backgroundColor: color }}
-          id={`${selected === color ? `selected` : null}`}
-          key={index}
-          onClick={() => {
-            handleSelect(color);
-          }}
-        ></button>
-      ))}
     </div>
   );
 };

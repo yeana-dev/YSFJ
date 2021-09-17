@@ -1,12 +1,7 @@
-.content-container form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-}
 .product-edit {
   width: 500px;
   margin: 0 auto;
+  padding-left: 100px;
 }
 
 .edit-form {
@@ -26,15 +21,13 @@
 .new-product {
   color: white;
   width: 50%;
-  font-family: 'Merriweather', serif;
-  font-size: xxx-large ;
+  font-family: "Merriweather", serif;
+  font-size: xxx-large;
 }
 .preview-image {
   width: 300px;
 }
-.glassImg-container2 {
-  padding-left: 100px;
-}
+
 .productEdit-image {
   object-fit: contain;
 }
