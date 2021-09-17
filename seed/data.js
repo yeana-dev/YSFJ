@@ -36,7 +36,7 @@ const insertData = async () => {
       price: 99,
       color: ["white", "black", "pink"],
       createdBy: "bianca",
-      userId: user1,
+      userId: null,
       category: "glasses",
     },
     {
