@@ -5,7 +5,8 @@ import Products from "./Screens/Products/Products";
 import ProductCreate from "./Screens/ProductCreate/ProductCreate";
 import ProductEdit from "./Screens/ProductEdit/ProductEdit";
 import Detail from "./Screens/Detail/Detail";
-import Delete from "./Screens/Delete/Delete"
+import Delete from "./Screens/Delete/Delete";
+import Newsletter from "./Screens/Newsletter/Newsletter";
 import SignUp from "./Screens/SignUp/SignUp";
 import SignIn from "./Screens/SignIn/SignIn";
 import SignOut from "./Screens/SignOut/SignOut";
@@ -58,6 +59,9 @@ const App = () => {
         </Route>
         <Route exact path="/delete">
           <Delete user={user} />
+        </Route>
+        <Route exact path="/newsletter">
+          <Newsletter user={user} />
         </Route>
 
       </Switch>

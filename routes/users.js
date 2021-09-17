@@ -10,5 +10,6 @@ router.get("/verify", controllers.verify);
 router.get('/users/:id', controllers.getUser)
 
 router.get('/users/:id/cart', controllers.getCart)
+router.delete('/users/:id/products/:productId', controllers.deleteCartItem)
 
 export default router;
