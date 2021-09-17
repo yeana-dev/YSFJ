@@ -53,8 +53,8 @@ const insertData = async () => {
         "Bold shape feels perfectly balanced thanks to its slightly square lenses and sloping browline. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 105,
       color: ["black", "brown", "gold"],
-      createdBy: "bruno",
-      userId: user2,
+      createdBy: "bianca",
+      userId: user1,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],

@@ -113,7 +113,7 @@ export const deleteCartItem = async (req, res) => {
   }
 }
 
-export const addToCart = async (req, res) => {
+export const updateUserProduct = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
       const product = await Product.findByIdAndUpdate(productId, req.body, { new: true })

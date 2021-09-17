@@ -11,6 +11,6 @@ router.get('/users/:id', controllers.getUser)
 
 router.get('/users/:id/cart', controllers.getCart)
 router.delete('/users/:id/cart/:productId', controllers.deleteCartItem)
-router.put('/users/:id/cart/:productId', controllers.addToCart)
+// router.put('/users/:id/cart/:productId', controllers.addToCart)
 
 export default router;
