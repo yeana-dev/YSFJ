@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
 import Product from '../models/product.js'
+import product from "../models/product.js";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
@@ -105,6 +106,22 @@ export const deleteCartItem = async (req, res) => {
         return res.status(200).send('Product deleted')
       }
       throw new Error(`Product ${req.params.productId} not found`)
+    }
+    throw new Error(`User ${req.params.id} does not exist!`)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: error.message })
+  }
+}
+
+export const addToCart = async (req, res) => {
+  try {
+    if (await User.findById(req.params.id)) {
+      const user = await User.findById(req.params.id)
+      const product = await Product.findById(req.params.productId)
+      user.products.push(product)
+      await user.save()
+      return res.status(200).json(product)
     }
     throw new Error(`User ${req.params.id} does not exist!`)
   } catch (error) {

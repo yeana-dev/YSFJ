@@ -35,7 +35,7 @@ const insertData = async () => {
         "Talk about versatile. Yeana's sort of square, sort of round lenses (and its subtly sculpted keyhole bridge) look great on a range of faces. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 99,
       color: ["white", "black", "pink"],
-      createdBy: "bruno",
+      createdBy: "bianca",
       userId: user1,
       category: "glasses",
     },
@@ -68,10 +68,7 @@ const insertData = async () => {
       color: ["gold", "silver"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Jorge",
@@ -85,12 +82,9 @@ const insertData = async () => {
         "With Jorge, grand proportions (oversized round lenses, anyone?) meet thinner acetate for an airier, softer look. Balance is key, after all. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 105,
       color: ["black", "brown", "darkgreen"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      createdBy: "bianca",
+      userId: user1,
+      category: "glasses",
     },
     {
       title: "Bruno",
@@ -106,312 +100,7 @@ const insertData = async () => {
       color: ["black", "brown", "white"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Nora",
-      image_url: [
-        "https://i.warbycdn.com/s/c/898edad196c145a62d62f8e47ab6d7d78448f755?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/3ec7203c84b4766d08d31993f5911d82e61bf71e?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/73269cc2a17a1e8602fc3b607d882acdd5a325f2?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/3c834cdcc0e91221cbe558b7afe9909f38ba7c2d?quality=80&width=900",
-      ],
-      description:
-        "What do you get when you combine round lenses, slim temple arms, and a keyhole bridge? A good-looking frame named Nora. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["black", "brown", "darkgreen", "white"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Raul",
-      image_url: [
-        "https://i.warbycdn.com/s/c/c2f5125da30588f75945ad87c4308a333e408b05?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/4d06605e46e0677a9c62cb2cb71303c142958955?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/9d39be2ae9b38a80b7db55a9b1faa4cb71bf3256?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/9b51e19e083ed93ebe3d4907ba67f9dece770fc6?quality=80&width=900",
-      ],
-      description:
-        "Two slightly ’70s touches—an oversized fit and an almost-flat browline—give Raul an easygoing appeal. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["black", "brown"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Nikki",
-      image_url: [
-        "https://i.warbycdn.com/s/c/7cc058eb3f5c4699bf1a235e07b76d1db27ef800?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/c129b46327f096abfc6c078ea6bb7e6800eb0a58?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/d5bfa43e63dc5227a5a598badf19d0ad03ba5deb?quality=80&width=900",
-        "https://i.warbycdn.com/s/c/191527ac2d7cb029db3638f2b3ff330405e5b1c5?quality=80&width=900",
-      ],
-      description:
-        "Nikki, one of our tried-and-true classics, gets slightly revamped with Low Bridge Fit construction. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["brown", "pink"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Nia-Emani",
-      image_url: [
-        "https://i.warbycdn.com/s/c/83d77bd82baeff084dd447938051090c6d0dfa95?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/e4c3057ab2ab62169bd0f45fd18a6376317d1475?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/4267e718463cc9e9ae58a1486ecc1dc6667b0994?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/68e07904d971c749bdcf0d4bb7ab29b167b40f82?quality=75&width=900",
-      ],
-      description:
-        "Looking for a bit of oomph with your next round frame? Choose Nia-Emani, a downright wearable style trimmed with our signature Graduated Rivet design. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 115,
-      color: ["brown", "black", "red"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Adanne",
-      image_url: [
-        "https://i.warbycdn.com/s/c/5461416be913870b69b97c097381615370bc4809?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/f3c442be1c908f7e53cba2e38e7958bc76b1fd1c?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/eff9f2553b40260a60cb1c9e1982e0880c298a54?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/2b69d82d52260001c3d8a0bfbe82dc0de21a4799?quality=75&width=900",
-      ],
-      description:
-        "With slightly upturned lenses, slim temple arms, and our Graduated Rivet design, Adanne is a feminine, understated cat-eye. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["brown", "pink"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Cathleen",
-      image_url: [
-        "https://i.warbycdn.com/s/c/efe414ba72658169f24be4c27efdd9731bfd1860?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/505a1f238dd1de22d046c136c8798085cd3c39e4?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/1df9532e97377d3661121383c4ec41ee20a23198?quality=75&width=900",
-      ],
-      description:
-        "A head turn here. A double take there. Cathleen commands just this sort of attention with its squarish cat-eyed lenses and overall impression of understated confidence. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 85,
-      color: ["brown", "lightblue", "white"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Alex",
-      image_url: [
-        "https://i.warbycdn.com/s/c/d3f59acbb299ec73707c15cb8a402650dc81a32e?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/bc01a65e0ab4930ae8f2e22448f2bfc1a4b7724d?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/be86bb114295a912354a0826505f96b7e9e79c25?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/4cf8412ebdf090289f3528d5992a601408847847?quality=75&width=900",
-      ],
-      description:
-        "Alex's sleek lines land it right in the middle of a Venn diagram between sensible and stylish. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 105,
-      color: ["brown", "black", "white"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Esther",
-      image_url: [
-        "https://i.warbycdn.com/s/c/a700222bfd4d36f7fccd71066a2def4f2cdbea73?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/1b469f868938b6c810e8aaabf821d912edd06df5?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/692bb99f9bba3c2180439330e6fff76904dc74dc?quality=75&width=900",
-      ],
-      description:
-        "A statement frame with oodles of panache, Esther finds the magic in round lenses and the always pleasing combo of acetate and stainless steel. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 125,
-      color: ["lightbrown", "pink"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Andrew",
-      image_url: [
-        "https://i.warbycdn.com/s/c/71bc5ae052e927baff71e87e2e90453dd21eefa9?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/c052d4631febcac6f22f65b664c6e274193c8e32?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/652ed963beda4814de488aa79718ff311429ac06?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/d30f13041ecb5ebc38eb437c3ea01b15f24eea5f?quality=75&width=900",
-      ],
-      description:
-        "We rendered Andrew's expansive proportions in thinly carved acetate for a beautifully balanced and bold effect. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 85,
-      color: ["brown", "pink", "lightblue"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Casey",
-      image_url: [
-        "https://i.warbycdn.com/s/c/54e2900e4814587e077e203b2100f49fff882943?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/98ae50c2738903696d7abfc2e70432d0976331e4?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/18ab37bee86e07f3789f1abb30d35ced07af681e?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/f791f980b69a3c267e70f1456756f16cdaab249a?quality=75&width=900",
-      ],
-      description:
-        "Casey is understated excellence distilled into one flatteringly square, Graduated Rivet design-studded frame. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 105,
-      color: ["brown", "black", "orange"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Joshua",
-      image_url: [
-        "https://i.warbycdn.com/s/c/462b8f1edfbe4d63a394671d48f43a2c79aa8ac9?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/83d2b3d41df793d086a6d70d30f66683321d1849?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/d10ac5cafad8c610c1fd9432db26e46bbc1063b5?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/fddcf042d2713b90c3d5d4cfac0ea49495f41c74?quality=75&width=900",
-      ],
-      description:
-        "With perfectly oval lenses and sleek temple arms, Joshua will stun in any circumstance. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 105,
-      color: ["brown", "black"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Paul",
-      image_url: [
-        "https://i.warbycdn.com/s/c/e8477b0df7114b6556cbb8b6c0754b2fe2596dc4?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/971b47ce4ac8e4f679070f6046968223a313746d?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/7fdb3472194e96a295828f2dd2e0ba9752979584?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/0bbffd04c91cb2ae48f41055195681017e88c02d?quality=75&width=900",
-      ],
-      description:
-        "Paul's round lenses give way to one of our most angular renditions of a keyhole bridge yet. The scalloped detailing brings extra flourish to the feature. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 115,
-      color: ["brown", "black"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Jexica",
-      image_url: [
-        "https://i.warbycdn.com/s/c/44b20d76a68ea48411406d1fcd326d01a6051545?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/e8391a07855a6836a35263ecfc82f934ada74959?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/f860b0b8c1a0c50f4195ee2dd86d90941c8e5218?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/4f6d33172ed18ca6d9b475e29423a4974b28cada?quality=75&width=900",
-      ],
-      description:
-        "Jexica is a circular, mixed-material frame with a truly elevated frame construction—quite literally. It features high-up, elongated end pieces that lift the temples away from the lenses, creating a “floating” effect. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 105,
-      color: ["green", "white"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Eileen",
-      image_url: [
-        "https://i.warbycdn.com/s/c/4bc3cf573ad0ed5b7d2b0b389ae6aee03751e603?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/ba9032203a392abbba6b4c9d8844ce4e1e329da4?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/0fcf60c7e5305db4cc6837cd369d595cdfb11544?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/930ad9ae04e97ed98b997fe036f6deb966b977d5?quality=75&width=900",
-      ],
-      description:
-        "Eileen, with dapper round lenses and a pronounced keyhole bridge, is as studious (or spirited) as you make it. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 105,
-      color: ["brown", "pink", "lightblue"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Rachel",
-      image_url: [
-        "https://i.warbycdn.com/s/c/46727c454714c04f06e8b909ae378a2e0cd7930a?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/fedcb88a027df8ad6028a5cca9ada01cfb4da520?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/bc320e26f0b7704a532074c1ce839ee374bbbdf4?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/634fc8edea33cd04276b499d3c4f9c736613ebad?quality=75&width=900",
-      ],
-      description:
-        "Rachel is back. What's different about our classic round frame? We gave it a slimmer nose bridge and added our signature Graduated Rivet design. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["brown", "darkgreen"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
-    },
-    {
-      title: "Tiffany",
-      image_url: [
-        "https://i.warbycdn.com/s/c/dd55ed8afe859c45a05838c6f0eeda3083a224ae?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/dde408fad508c66bdee4599f9d339fe4f4ba9569?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/69c5f5e9c4046b2d7047ab872ce6f649b302ad37?quality=75&width=900",
-        "https://i.warbycdn.com/s/c/7f15c81b8ca1bcf663d5c276fb32ee06aa9eac06?quality=75&width=900",
-      ],
-      description:
-        "It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
-      price: 95,
-      color: ["brown", "pink"],
-      createdBy: "bruno",
-      userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Steve",
@@ -427,10 +116,261 @@ const insertData = async () => {
       color: ["brown"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "sunglasses",
+    },
+    {
+      title: "Nora",
+      image_url: [
+        "https://i.warbycdn.com/s/c/898edad196c145a62d62f8e47ab6d7d78448f755?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/3ec7203c84b4766d08d31993f5911d82e61bf71e?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/73269cc2a17a1e8602fc3b607d882acdd5a325f2?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/3c834cdcc0e91221cbe558b7afe9909f38ba7c2d?quality=80&width=900",
+      ],
+      description:
+        "What do you get when you combine round lenses, slim temple arms, and a keyhole bridge? A good-looking frame named Nora. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["black", "brown", "darkgreen", "white"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Raul",
+      image_url: [
+        "https://i.warbycdn.com/s/c/c2f5125da30588f75945ad87c4308a333e408b05?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/4d06605e46e0677a9c62cb2cb71303c142958955?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/9d39be2ae9b38a80b7db55a9b1faa4cb71bf3256?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/9b51e19e083ed93ebe3d4907ba67f9dece770fc6?quality=80&width=900",
+      ],
+      description:
+        "Two slightly ’70s touches—an oversized fit and an almost-flat browline—give Raul an easygoing appeal. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["black", "brown"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Nikki",
+      image_url: [
+        "https://i.warbycdn.com/s/c/7cc058eb3f5c4699bf1a235e07b76d1db27ef800?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/c129b46327f096abfc6c078ea6bb7e6800eb0a58?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/d5bfa43e63dc5227a5a598badf19d0ad03ba5deb?quality=80&width=900",
+        "https://i.warbycdn.com/s/c/191527ac2d7cb029db3638f2b3ff330405e5b1c5?quality=80&width=900",
+      ],
+      description:
+        "Nikki, one of our tried-and-true classics, gets slightly revamped with Low Bridge Fit construction. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["brown", "pink"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Nia-Emani",
+      image_url: [
+        "https://i.warbycdn.com/s/c/83d77bd82baeff084dd447938051090c6d0dfa95?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/e4c3057ab2ab62169bd0f45fd18a6376317d1475?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/4267e718463cc9e9ae58a1486ecc1dc6667b0994?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/68e07904d971c749bdcf0d4bb7ab29b167b40f82?quality=75&width=900",
+      ],
+      description:
+        "Looking for a bit of oomph with your next round frame? Choose Nia-Emani, a downright wearable style trimmed with our signature Graduated Rivet design. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 115,
+      color: ["brown", "black", "red"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Adanne",
+      image_url: [
+        "https://i.warbycdn.com/s/c/5461416be913870b69b97c097381615370bc4809?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/f3c442be1c908f7e53cba2e38e7958bc76b1fd1c?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/eff9f2553b40260a60cb1c9e1982e0880c298a54?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/2b69d82d52260001c3d8a0bfbe82dc0de21a4799?quality=75&width=900",
+      ],
+      description:
+        "With slightly upturned lenses, slim temple arms, and our Graduated Rivet design, Adanne is a feminine, understated cat-eye. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["brown", "pink"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Cathleen",
+      image_url: [
+        "https://i.warbycdn.com/s/c/efe414ba72658169f24be4c27efdd9731bfd1860?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/505a1f238dd1de22d046c136c8798085cd3c39e4?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/1df9532e97377d3661121383c4ec41ee20a23198?quality=75&width=900",
+      ],
+      description:
+        "A head turn here. A double take there. Cathleen commands just this sort of attention with its squarish cat-eyed lenses and overall impression of understated confidence. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 85,
+      color: ["brown", "lightblue", "white"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Alex",
+      image_url: [
+        "https://i.warbycdn.com/s/c/d3f59acbb299ec73707c15cb8a402650dc81a32e?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/bc01a65e0ab4930ae8f2e22448f2bfc1a4b7724d?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/be86bb114295a912354a0826505f96b7e9e79c25?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/4cf8412ebdf090289f3528d5992a601408847847?quality=75&width=900",
+      ],
+      description:
+        "Alex's sleek lines land it right in the middle of a Venn diagram between sensible and stylish. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 105,
+      color: ["brown", "black", "white"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Esther",
+      image_url: [
+        "https://i.warbycdn.com/s/c/a700222bfd4d36f7fccd71066a2def4f2cdbea73?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/1b469f868938b6c810e8aaabf821d912edd06df5?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/692bb99f9bba3c2180439330e6fff76904dc74dc?quality=75&width=900",
+      ],
+      description:
+        "A statement frame with oodles of panache, Esther finds the magic in round lenses and the always pleasing combo of acetate and stainless steel. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 125,
+      color: ["lightbrown", "pink"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Andrew",
+      image_url: [
+        "https://i.warbycdn.com/s/c/71bc5ae052e927baff71e87e2e90453dd21eefa9?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/c052d4631febcac6f22f65b664c6e274193c8e32?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/652ed963beda4814de488aa79718ff311429ac06?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/d30f13041ecb5ebc38eb437c3ea01b15f24eea5f?quality=75&width=900",
+      ],
+      description:
+        "We rendered Andrew's expansive proportions in thinly carved acetate for a beautifully balanced and bold effect. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 85,
+      color: ["brown", "pink", "lightblue"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Casey",
+      image_url: [
+        "https://i.warbycdn.com/s/c/54e2900e4814587e077e203b2100f49fff882943?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/98ae50c2738903696d7abfc2e70432d0976331e4?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/18ab37bee86e07f3789f1abb30d35ced07af681e?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/f791f980b69a3c267e70f1456756f16cdaab249a?quality=75&width=900",
+      ],
+      description:
+        "Casey is understated excellence distilled into one flatteringly square, Graduated Rivet design-studded frame. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 105,
+      color: ["brown", "black", "orange"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Joshua",
+      image_url: [
+        "https://i.warbycdn.com/s/c/462b8f1edfbe4d63a394671d48f43a2c79aa8ac9?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/83d2b3d41df793d086a6d70d30f66683321d1849?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/d10ac5cafad8c610c1fd9432db26e46bbc1063b5?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/fddcf042d2713b90c3d5d4cfac0ea49495f41c74?quality=75&width=900",
+      ],
+      description:
+        "With perfectly oval lenses and sleek temple arms, Joshua will stun in any circumstance. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 105,
+      color: ["brown", "black"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Paul",
+      image_url: [
+        "https://i.warbycdn.com/s/c/e8477b0df7114b6556cbb8b6c0754b2fe2596dc4?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/971b47ce4ac8e4f679070f6046968223a313746d?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/7fdb3472194e96a295828f2dd2e0ba9752979584?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/0bbffd04c91cb2ae48f41055195681017e88c02d?quality=75&width=900",
+      ],
+      description:
+        "Paul's round lenses give way to one of our most angular renditions of a keyhole bridge yet. The scalloped detailing brings extra flourish to the feature. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 115,
+      color: ["brown", "black"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "sunglasses",
+    },
+    {
+      title: "Jexica",
+      image_url: [
+        "https://i.warbycdn.com/s/c/44b20d76a68ea48411406d1fcd326d01a6051545?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/e8391a07855a6836a35263ecfc82f934ada74959?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/f860b0b8c1a0c50f4195ee2dd86d90941c8e5218?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/4f6d33172ed18ca6d9b475e29423a4974b28cada?quality=75&width=900",
+      ],
+      description:
+        "Jexica is a circular, mixed-material frame with a truly elevated frame construction—quite literally. It features high-up, elongated end pieces that lift the temples away from the lenses, creating a “floating” effect. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 105,
+      color: ["green", "white"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Eileen",
+      image_url: [
+        "https://i.warbycdn.com/s/c/4bc3cf573ad0ed5b7d2b0b389ae6aee03751e603?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/ba9032203a392abbba6b4c9d8844ce4e1e329da4?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/0fcf60c7e5305db4cc6837cd369d595cdfb11544?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/930ad9ae04e97ed98b997fe036f6deb966b977d5?quality=75&width=900",
+      ],
+      description:
+        "Eileen, with dapper round lenses and a pronounced keyhole bridge, is as studious (or spirited) as you make it. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 105,
+      color: ["brown", "pink", "lightblue"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Rachel",
+      image_url: [
+        "https://i.warbycdn.com/s/c/46727c454714c04f06e8b909ae378a2e0cd7930a?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/fedcb88a027df8ad6028a5cca9ada01cfb4da520?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/bc320e26f0b7704a532074c1ce839ee374bbbdf4?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/634fc8edea33cd04276b499d3c4f9c736613ebad?quality=75&width=900",
+      ],
+      description:
+        "Rachel is back. What's different about our classic round frame? We gave it a slimmer nose bridge and added our signature Graduated Rivet design. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["brown", "darkgreen"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
+    },
+    {
+      title: "Tiffany",
+      image_url: [
+        "https://i.warbycdn.com/s/c/dd55ed8afe859c45a05838c6f0eeda3083a224ae?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/dde408fad508c66bdee4599f9d339fe4f4ba9569?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/69c5f5e9c4046b2d7047ab872ce6f649b302ad37?quality=75&width=900",
+        "https://i.warbycdn.com/s/c/7f15c81b8ca1bcf663d5c276fb32ee06aa9eac06?quality=75&width=900",
+      ],
+      description:
+        "It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
+      price: 95,
+      color: ["brown", "pink"],
+      createdBy: "bruno",
+      userId: user2,
+      category: "glasses",
     },
     {
       title: "Daria",
@@ -446,10 +386,7 @@ const insertData = async () => {
       color: ["brown", "white"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Courtney",
@@ -465,10 +402,7 @@ const insertData = async () => {
       color: ["brown"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Nadia",
@@ -484,10 +418,7 @@ const insertData = async () => {
       color: ["brown", "black", "white"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Theodore",
@@ -502,10 +433,7 @@ const insertData = async () => {
       color: ["brown", "black", "darkgreen"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "glasses",
     },
     {
       title: "Sean",
@@ -521,10 +449,7 @@ const insertData = async () => {
       color: ["brown"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "sunglasses",
     },
     {
       title: "Garrett",
@@ -540,10 +465,7 @@ const insertData = async () => {
       color: ["brown", "black", "white"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "sunglasses",
     },
     {
       title: "Jake",
@@ -559,10 +481,7 @@ const insertData = async () => {
       color: ["lightblue", "white"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "sunglasses",
     },
     {
       title: "Otis",
@@ -577,16 +496,13 @@ const insertData = async () => {
       color: ["brown"],
       createdBy: "bruno",
       userId: user2,
-      //  category: {
-      //   type: String,
-      //   enum: ["glasses" "sunglasses"],
-      // required: true, }: Post- MVP
+      category: "sunglasses",
     },
   ];
 
+
   await Product.insertMany(products);
   console.log("Created users & products!");
-
   user1.products = await Product.find({ userId: user1 });
   await user1.save();
   user2.products = await Product.find({ userId: user2 });

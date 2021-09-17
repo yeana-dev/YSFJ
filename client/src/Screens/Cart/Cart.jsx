@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import "./Cart.css";
 import Layout from "../../Components/Layout/Layout";
-import Detail from "../../Components/Detail/Detail";
-import Search from "../../Components/Search/Search";
 import { getCart } from "../../Services/users";
 import { deleteCartItem } from "../../Services/users";
-import { Redirect } from "react-router";
 
 function Cart(props) {
   const [products, setProducts] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const allProducts = await getCart(props.user.id);
@@ -20,14 +18,8 @@ function Cart(props) {
     fetchProducts();
   }, [props.user.id]);
 
-  const handleSubmit = (event) => event.preventDefault();
 
   let totalPrice = 0;
-
-  // const handleDelete = () => {
-  //   deleteCartProduct(products.userId);
-  //   history.push("/cart");
-  // };
 
   return (
     <Layout user={props.user}>
@@ -48,7 +40,6 @@ function Cart(props) {
               <button
                 onClick={() => {
                   deleteCartItem(product.userId, product._id);
-                  Redirect.push("/cart");
                 }}
               >
                 Delete
