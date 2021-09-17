@@ -116,7 +116,7 @@ export const deleteCartItem = async (req, res) => {
 export const addToCart = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const product = await Product.findByIdAndUpdate(userId: user._id, req.body, { new: true })
+      const product = await Product.findByIdAndUpdate({ userId: User._id }, req.body, { new: true })
       res.status(200).json(product)
     }
     throw new Error(`User ${req.params.id} does not exist!`)
