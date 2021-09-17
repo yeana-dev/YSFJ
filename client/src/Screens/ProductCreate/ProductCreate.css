@@ -1,12 +1,11 @@
 .product-create {
-  width: 500px;
   margin: 2em auto;
   font-family: "Merriweather", serif;
 }
 
 .create-form {
-  justify-content: center;
-  align-items: center;
+  width: 500px;
+  margin: 2em auto;
 }
 
 .productCreate-image {

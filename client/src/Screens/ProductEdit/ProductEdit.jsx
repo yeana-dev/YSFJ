@@ -51,16 +51,16 @@ const ProductEdit = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="header-container">
-        <img
-          className="productEdit-image"
-          src="https://i.imgur.com/ZyxC5VY.png?1"
-          alt="header"
-        />
-        <div className="product-form-header">Edit Products</div>
-      </div>
       <div className="edit-form-container">
-        <div classNAme="edit-container">
+        <div className="header-container">
+          <img
+            className="productEdit-image"
+            src="https://i.imgur.com/ZyxC5VY.png?1"
+            alt="header"
+          />
+          <div className="product-form-header">Edit Products</div>
+        </div>
+        <div className="edit-container">
           <form className="edit-form" onSubmit={handleSubmit}>
             <div className="preview-image-container">
               {product.image_url[0] ? (
@@ -115,7 +115,6 @@ const ProductEdit = (props) => {
               value={product.title}
               name="title"
               required
-              autoFocus
               onChange={handleChange}
             />
             <input
@@ -132,7 +131,6 @@ const ProductEdit = (props) => {
               value={product.color}
               name="color"
               required
-              // autoFocusadd
               onChange={handleChange}
             />
             <textarea

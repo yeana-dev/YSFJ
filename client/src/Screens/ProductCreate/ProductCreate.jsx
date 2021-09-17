@@ -44,15 +44,15 @@ const ProductCreate = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="header-container">
-        <img
-          className="productCreate-image"
-          src="https://i.imgur.com/ZyxC5VY.png?1"
-          alt="header image"
-        />
-        <div className="product-form-header">New Products</div>
-      </div>
       <div className="product-create">
+        <div className="header-container">
+          <img
+            className="productCreate-image"
+            src="https://i.imgur.com/ZyxC5VY.png?1"
+            alt="header image"
+          />
+          <div className="product-form-header">New Products</div>
+        </div>
         <form className="create-form" onSubmit={handleSubmit}>
           <div className="preview-image-container">
             {product.image_url[0] ? (
@@ -123,7 +123,6 @@ const ProductCreate = (props) => {
             value={product.color}
             name="color"
             required
-            autoFocus
             onChange={handleChange}
           />
           <textarea

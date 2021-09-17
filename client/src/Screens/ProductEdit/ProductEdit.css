@@ -1,18 +1,21 @@
 .edit-form-container {
-  width: 500px;
   margin: 2em auto;
   font-family: "Merriweather", serif;
 }
 
 .edit-form {
-  justify-content: center;
-  align-items: center;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .header-container img {
   width: 50%;
   height: 300px;
   object-fit: contain;
+}
+
+.edit-container {
+  margin-top: 2em;
 }
 
 .header-container {
