@@ -4,17 +4,18 @@ import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
 import { getCart } from "../../Services/users";
-// import { deleteCartProduct } from "../../Services/users";
-// import { useHistory as history } from "react-router";
+import { deleteCartItem } from "../../Services/users";
+import { Redirect } from "react-router";
 
 function Cart(props) {
-  console.log(props.user.id);
   const [products, setProducts] = useState([]);
-
+  const [searchResult, setSearchResult] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
       const allProducts = await getCart(props.user.id);
       setProducts(allProducts);
+      console.log(allProducts);
+      setSearchResult(allProducts);
     };
     fetchProducts();
   }, [props.user.id]);
@@ -31,7 +32,7 @@ function Cart(props) {
   return (
     <Layout user={props.user}>
       <div className="cart-container">
-        {products.map((product) => {
+        {searchResult.map((product) => {
           totalPrice += product.price;
           return (
             <div className="cart-item">
@@ -44,6 +45,14 @@ function Cart(props) {
                 </div>
               </div>
               <img src={product.image_url[0]} alt="cart-item-preview" />
+              <button
+                onClick={() => {
+                  deleteCartItem(product.userId, product._id);
+                  Redirect.push("/cart");
+                }}
+              >
+                Delete
+              </button>
             </div>
           );
         })}

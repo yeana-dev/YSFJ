@@ -49,12 +49,11 @@ const Detail = (props) => {
 
   const unauthenticatedOptions = (
     <>
-      {/* {detail.userId === props.user.id ?
-        null :
+      {detail.userId === props.user.id ? null : (
         <div className="add-to-cart">
-          <button onClick>Add to cart</button>
+          <button>Add to cart</button>
         </div>
-      } */}
+      )}
     </>
   );
 
