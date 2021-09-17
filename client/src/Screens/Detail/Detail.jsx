@@ -31,43 +31,28 @@ const Detail = (props) => {
     return <h1>Loading...</h1>;
   }
   const authenticatedOptions = (
-    <>
-      {/* {detail.userId === detail._id ?
-        <div className="add-to-cart">
-          <button onClick>In Cart</button>
-        </div>
-        // <div className="add-to-cart">
-        //   <button onClick>Add to cart</button>
-        // </div>
-
-        : */}
-
-      <div className="edit-delete">
-        <Link className="edit-button" to={`/products/${detail._id}/edit`}>
-          <button>
-            <i className="far fa-edit"></i>
-          </button>
-        </Link>
-        <button className="delete-button" onClick={handleDelete}>
-          <i className="far fa-trash-alt"></i>
+    <div className="edit-delete">
+      <Link className="edit-button" to={`/products/${detail._id}/edit`}>
+        <button>
+          <i className="far fa-edit"></i>
         </button>
-      </div>
-      {/* } */}
-    </>
+      </Link>
+      <button className="delete-button" onClick={handleDelete}>
+        <i className="far fa-trash-alt"></i>
+      </button>
+    </div>
   );
 
   const unauthenticatedOptions = (
-    <>
-      {
-        detail.userId === props.user.id ?
-          <div className="add-to-cart">
-            <button onClick>In Cart</button>
-          </div> :
-          <div className="add-to-cart">
-            <button onClick>Add to cart</button>
-          </div>
-      }
-    </>
+    null
+    // <>
+    //   {detail.userId === props.user.id ?
+    //     null :
+    //     <div className="add-to-cart">
+    //       <button onClick>Add to cart</button>
+    //     </div>
+    //   }
+    // </>
   );
 
   return (
