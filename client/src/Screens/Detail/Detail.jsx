@@ -11,7 +11,11 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
+  const [selected, setSelected] = useState("");
 
+  const handleSelect = (color) => {
+    setSelected(color);
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
@@ -45,12 +49,12 @@ const Detail = (props) => {
 
   const unauthenticatedOptions = (
     <>
-      {detail.userId === props.user.id ?
+      {/* {detail.userId === props.user.id ?
         null :
         <div className="add-to-cart">
           <button onClick>Add to cart</button>
         </div>
-      }
+      } */}
     </>
   );
 
@@ -84,7 +88,21 @@ const Detail = (props) => {
               : unauthenticatedOptions}
           </div>
           <hr />
-          <div className="detail-color">{detail.color}</div>
+          <div className="detail-color">
+            <div className="product-color">
+              {detail.color.map((color, index) => (
+                <button
+                  style={{ backgroundColor: color }}
+                  id={`${selected === color ? `selected` : null}`}
+                  key={index}
+                  onClick={() => {
+                    handleSelect(color);
+                  }}
+                ></button>
+              ))}
+              <p>{selected}</p>
+            </div>
+          </div>
           <hr />
           <div className="detail-description">{detail.description}</div>
         </div>

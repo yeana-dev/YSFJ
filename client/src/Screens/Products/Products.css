@@ -5,15 +5,22 @@
   justify-content: center;
 }
 
-.middle-wrapper {
-  width: 60vw;
+.glasses-product-list {
+  width: 80vw;
   margin: 0 auto;
+}
+
+.glasses-product-list header {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 26px;
+  letter-spacing: 10px;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
-  margin: 3vh auto;
+  margin: 0 auto;
 }
 
 .sale-message,
@@ -54,20 +61,10 @@
 }
 
 @media (max-width: 1282px) {
-  .middle-wrapper {
-    width: 20%;
-  }
-
-  .middle-wrapper {
-    width: 50%;
-    margin-left: 59px;
-    margin-right: 45px;
-  }
-
   .products {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 90px;
+    margin-top: 5px;
   }
 }
 @media (max-width: 990px) {
@@ -75,8 +72,8 @@
     width: 100%;
   }
 
-  .middle-wrapper {
-    width: 100vw;
+  .glasses-product-list {
+    width: 100%;
     margin: 0;
   }
 }

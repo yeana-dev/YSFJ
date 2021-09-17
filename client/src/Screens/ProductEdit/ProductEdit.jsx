@@ -60,103 +60,95 @@ const ProductEdit = (props) => {
         />
         <div className="new-product">New Products</div>
       </div>
-      <div className="content-container">
-        <div className="product-edit">
-          <div className="glassImg-container2">
-            <img
-              className="preview-image"
-              src={product.image_url[0]}
-              alt="preview"
-            />
-          </div>
-        </div>
+      <div className="product-edit">
+        <img
+          className="preview-image"
+          src={product.image_url[0]}
+          alt="preview"
+        />
       </div>
-      <div className="content-container">
-        <div className="product-edit">
-          <form onSubmit={handleSubmit} className="edit-form">
-            <input
-              className="image-input-0"
-              placeholder="Image Link"
-              value={product.image_url[0]}
-              name="image_url"
-              data-id="0"
-              required
-              onChange={handleChange}
-            />
-            <input
-              className="image-input-1"
-              placeholder="Image Link"
-              value={product.image_url[1]}
-              name="image_url"
-              data-id="1"
-              required
-              onChange={handleChange}
-            />
-            <input
-              className="image-input-2"
-              placeholder="Image Link"
-              value={product.image_url[2]}
-              name="image_url"
-              data-id="2"
-              required
-              onChange={handleChange}
-            />
-            <input
-              className="image-input-3"
-              placeholder="Image Link"
-              value={product.image_url[3]}
-              name="image_url"
-              data-id="3"
-              required
-              onChange={handleChange}
-            />
-          </form>
-        </div>
+      <div className="product-edit">
+        <form onSubmit={handleSubmit} className="edit-form">
+          <input
+            className="image-input-0"
+            placeholder="Image Link"
+            value={product.image_url[0]}
+            name="image_url"
+            data-id="0"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="image-input-1"
+            placeholder="Image Link"
+            value={product.image_url[1]}
+            name="image_url"
+            data-id="1"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="image-input-2"
+            placeholder="Image Link"
+            value={product.image_url[2]}
+            name="image_url"
+            data-id="2"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="image-input-3"
+            placeholder="Image Link"
+            value={product.image_url[3]}
+            name="image_url"
+            data-id="3"
+            required
+            onChange={handleChange}
+          />
+        </form>
       </div>
-      <div className="content-container">
-        <div className="product-edit">
-          <form className="edit-form" onSubmit={handleSubmit}>
-            <input
-              className="edit-title"
-              placeholder="Tiltle"
-              value={product.title}
-              name="title"
-              required
-              autoFocus
-              onChange={handleChange}
-            />
-            <input
-              className="edit-price"
-              placeholder="Price"
-              value={product.price}
-              name="price"
-              required
-              onChange={handleChange}
-            />
-            <input
-              className="edit-color"
-              placeholder="color"
-              value={product.color}
-              name="color"
-              required
-              // autoFocusadd
-              onChange={handleChange}
-            />
-            <textarea
-              className="edit-description"
-              rows={10}
-              cols={78}
-              placeholder="Description"
-              value={product.description}
-              name="description"
-              required
-              onChange={handleChange}
-            />
-            <button type="submit" className="save-button">
-              Save
-            </button>
-          </form>
-        </div>
+      <div className="product-edit">
+        <form className="edit-form" onSubmit={handleSubmit}>
+          <input
+            className="edit-title"
+            placeholder="Tiltle"
+            value={product.title}
+            name="title"
+            required
+            autoFocus
+            onChange={handleChange}
+          />
+          <input
+            className="edit-price"
+            placeholder="Price"
+            value={product.price}
+            name="price"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="edit-color"
+            placeholder="color"
+            value={product.color}
+            name="color"
+            required
+            // autoFocusadd
+            onChange={handleChange}
+          />
+          <textarea
+            className="edit-description"
+            rows={10}
+            cols={78}
+            placeholder="Description"
+            value={product.description}
+            name="description"
+            required
+            onChange={handleChange}
+          />
+          <button type="submit" className="save-button">
+            Save
+          </button>
+        </form>
       </div>
     </Layout>
   );

@@ -28,14 +28,16 @@ function Products(props) {
   };
 
   const handleSubmit = (event) => event.preventDefault();
-
-  const firstHalfArr = searchResult.slice(0, 3);
-  const secondHalfArr = searchResult.slice(3);
+  console.log(products);
+  console.log(searchResult);
+  const firstHalfArr = searchResult.slice(0, 6);
+  const secondHalfArr = searchResult.slice(6);
 
   return (
     <Layout user={props.user}>
-      <div className="middle-wrapper">
+      <div className="glasses-product-list">
         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+        <header>GLASSES</header>
         <div className="products">
           {firstHalfArr.map((product, index) => {
             return (
