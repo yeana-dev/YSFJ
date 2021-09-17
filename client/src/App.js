@@ -16,6 +16,7 @@ import { verifyUser } from "./Services/users";
 import Cart from "./Screens/Cart/Cart";
 const App = () => {
   const [user, setUser] = useState(null);
+  const [toggleFetch, setToggleFetch] = useState(false)
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -23,7 +24,7 @@ const App = () => {
       user ? setUser(user) : setUser(null);
     };
     fetchUser();
-  }, []);
+  }, [toggleFetch]);
   return (
     <div className="app">
       <Switch>
@@ -55,7 +56,7 @@ const App = () => {
           <Support user={user} />
         </Route>
         <Route exact path={'/cart'}>
-          <Cart user={user} />
+          <Cart user={user} setToggleFetch={setToggleFetch} />
         </Route>
         <Route exact path="/delete">
           <Delete user={user} />

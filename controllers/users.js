@@ -91,7 +91,7 @@ export const getCart = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
     const userProducts = await Product.find({ userId: user._id })
-    res.json(userProducts)
+    return res.json(userProducts)
   } catch (error) {
     console.log(error.message)
     res.status(500).json({ error: error.message })
@@ -101,11 +101,12 @@ export const getCart = async (req, res) => {
 export const deleteCartItem = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const deleted = await Product.findByIdAndDelete(req.params.productId)
-      if (deleted) {
-        return res.status(200).send('Product deleted')
-      }
-      throw new Error(`Product ${req.params.productId} not found`)
+      const user = await User.findById(req.params.id)
+      const product = await Product.findById(req.params.productId)
+      user.products.pop(product)
+      console.log(product)
+      await user.save()
+      return res.status(200).json(product)
     }
     throw new Error(`User ${req.params.id} does not exist!`)
   } catch (error) {

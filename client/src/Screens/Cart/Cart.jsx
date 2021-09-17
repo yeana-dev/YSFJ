@@ -18,6 +18,11 @@ function Cart(props) {
     fetchProducts();
   }, [props.user.id]);
 
+  const handlesubmit = (e, userId, _id) => {
+    // e.preventDefault()
+    deleteCartItem(userId, _id);
+    props.setToggleFetch(prevstate => !prevstate)
+  }
 
   let totalPrice = 0;
 
@@ -38,10 +43,7 @@ function Cart(props) {
               </div>
               <img src={product.image_url[0]} alt="cart-item-preview" />
               <button
-                onClick={() => {
-                  deleteCartItem(product.userId, product._id);
-                }}
-              >
+                onClick={(e) => handlesubmit(e, product.userId, product._id)}>
                 Delete
               </button>
             </div>
