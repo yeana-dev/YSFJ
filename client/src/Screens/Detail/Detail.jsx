@@ -11,7 +11,11 @@ const Detail = (props) => {
   const [renderedImage, setRenderedImage] = useState("");
   const { id } = useParams();
   const history = useHistory();
+  const [selected, setSelected] = useState("");
 
+  const handleSelect = (color) => {
+    setSelected(color);
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       const detail = await getDetail(id);
@@ -85,7 +89,30 @@ const Detail = (props) => {
               : unauthenticatedOptions}
           </div>
           <hr />
-          <div className="detail-color">{detail.color}</div>
+          <div className="detail-color">
+            <div className="product-color">
+              <div className="color-options color-boxes">
+                {detail.color.map((color, index) => (
+                  <button
+                    style={{ backgroundColor: color }}
+                    id={`${selected === color ? `selected` : null}`}
+                    key={index}
+                    onClick={() => {
+                      handleSelect(color);
+                    }}
+                  ></button>
+                ))}
+              </div>
+              <div className="selected-color color-boxes">
+                {selected ? (
+                  <button style={{ backgroundColor: selected }}></button>
+                ) : (
+                  "Select your color!"
+                )}
+                <span>{selected.toUpperCase()}</span>
+              </div>
+            </div>
+          </div>
           <hr />
           <div className="detail-description">{detail.description}</div>
         </div>
