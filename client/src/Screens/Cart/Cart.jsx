@@ -4,20 +4,17 @@ import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
 import { getCart } from "../../Services/users"
-// import { deleteCartProduct } from "../../Services/users";
-// import { useHistory as history } from "react-router";
+import { deleteCartItem } from "../../Services/users";
+import { Redirect } from "react-router";
 
 function Cart(props) {
-  console.log(props.user.id)
   const [products, setProducts] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
-
   useEffect(() => {
     const fetchProducts = async () => {
       const allProducts = await getCart(props.user.id);
       setProducts(allProducts);
       console.log(allProducts);
-
       setSearchResult(allProducts);
     };
     fetchProducts();
@@ -32,11 +29,6 @@ function Cart(props) {
 
   const handleSubmit = (event) => event.preventDefault();
 
-  // const handleDelete = () => {
-  //   deleteCartProduct(products.userId);
-  //   history.push("/cart");
-  // };
-
   return (
     <Layout user={props.user}>
       <div className="products-wrapper">
@@ -50,14 +42,17 @@ function Cart(props) {
           <div className="products">
             {searchResult.map((product, index) => {
               return (
-                <Detail
-                  _id={product._id}
-                  title={product.title}
-                  image_url={product.image_url[0]}
-                  price={product.price}
-                  color={product.color}
-                  key={index}
-                />
+                <>
+                  <Detail
+                    _id={product._id}
+                    title={product.title}
+                    image_url={product.image_url[0]}
+                    price={product.price}
+                    color={product.color}
+                    key={index}
+                  />
+                  <button onClick={() => { deleteCartItem(product.userId, product._id); Redirect.push("/cart"); }}>Delete</button>
+                </>
               );
             })}
           </div>
