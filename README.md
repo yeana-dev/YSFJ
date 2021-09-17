@@ -42,9 +42,9 @@ From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual 
 | ------------ | ----------------------------------------------------------------------- | ---------- |
 | September 10 | Wireframes, Approval, Back-end/Authentication                           | Complete   |
 | September 13 | Components, Screens, Debugging, Deployment                              | Complete   |
-| September 14 | Sophie's Birthday! 🥳 CSS / Post-MVP: Search, Support                   | Incomplete |
+| September 14 | Sophie's Birthday! 🥳 CSS / Post-MVP: Search, Support                   | Complete   |
 | September 15 | CSS / Post-MVP: Cart, Multiple images on Detail                         | Incomplete |
-| September 16 | CSS: Responsive / Post-MVP: Bottom feature cards, nearest store / Debug | Incomplete |
+| September 16 | CSS: Responsive / Post-MVP: Bottom feature cards, nearest store / Debug | Complete   |
 | September 17 | Presentations                                                           | Incomplete |
 
 ## Timeframes
@@ -55,7 +55,8 @@ From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual 
 | Back-end: API/CRUD                         |    H     |      6hrs      |     12hrs     |    12hrs    |
 | Authentication                             |    H     |      6hrs      |     4hrs      |    4hrs     |
 | Front-end: Components                      |    H     |      3hrs      |     3hrs      |    3hrs     |
-| Front-end: Screens                         |    H     |      8hrs      |     5hrs      |    -hrs     |
+| Front-end: Screens                         |    H     |      8hrs      |     10hrs     |    10hrs    |
 | Deployment                                 |    H     |      3hrs      |     2hrs      |    2hrs     |
-| CSS                                        |    H     |     48hrs      |     12hrs     |    -hrs     |
-| Total                                      |    H     |     78hrs      |     44hrs     |    -hrs     |
+| CSS                                        |    H     |     48hrs      |     50hrs     |    50hrs    |
+| Post-MVP : Cart                            |    H     |     20hrs      |     19hrs     |    19hrs    |
+| Total                                      |    H     |     78hrs      |     44hrs     |   106hrs    |
