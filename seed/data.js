@@ -35,7 +35,7 @@ const insertData = async () => {
         "Talk about versatile. Yeana's sort of square, sort of round lenses (and its subtly sculpted keyhole bridge) look great on a range of faces. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 99,
       color: ["white", "black", "pink"],
-      createdBy: "bruno",
+      createdBy: "bianca",
       userId: user1,
       category: "glasses",
     },
@@ -82,8 +82,8 @@ const insertData = async () => {
         "With Jorge, grand proportions (oversized round lenses, anyone?) meet thinner acetate for an airier, softer look. Balance is key, after all. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 105,
       color: ["black", "brown", "darkgreen"],
-      createdBy: "bruno",
-      userId: user2,
+      createdBy: "bianca",
+      userId: user1,
       category: "glasses",
     },
     {
@@ -500,9 +500,9 @@ const insertData = async () => {
     },
   ];
 
+
   await Product.insertMany(products);
   console.log("Created users & products!");
-
   user1.products = await Product.find({ userId: user1 });
   await user1.save();
   user2.products = await Product.find({ userId: user2 });
