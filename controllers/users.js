@@ -37,6 +37,7 @@ export const signUp = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 export const signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -61,6 +62,7 @@ export const signIn = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
 export const verify = async (req, res) => {
   try {
     const token = req.headers.authorization.split(" ")[1];
@@ -95,7 +97,7 @@ export const getCart = async (req, res) => {
   }
 }
 
-// export const deleteCartProduct = async (req, res) => {
+// export const deleteCartItem = async (req, res) => {
 //   try {
 //     if (await User.findById(req.params.id)) {
 //       const deleted = await Product.findByIdAndDelete(req.params.productId)
