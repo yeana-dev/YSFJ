@@ -35,7 +35,7 @@ const insertData = async () => {
         "Talk about versatile. Yeana's sort of square, sort of round lenses (and its subtly sculpted keyhole bridge) look great on a range of faces. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 99,
       color: ["white", "black", "pink"],
-      createdBy: "bruno",
+      createdBy: "bianca",
       userId: user1,
       category: "glasses",
     },
@@ -86,7 +86,7 @@ const insertData = async () => {
       price: 105,
       color: ["black", "brown", "darkgreen"],
       createdBy: "bianca",
-      userId: user2,
+      userId: user1,
       //  category: {
       //   type: String,
       //   enum: ["glasses" "sunglasses"],

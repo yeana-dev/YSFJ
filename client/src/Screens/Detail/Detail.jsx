@@ -52,7 +52,7 @@ const Detail = (props) => {
     <>
       <div className="add-to-cart">
         <button onClick={() => {
-          addToCart(detail.userId, detail._id)
+          addToCart(props.user.id, detail._id)
         }}>Add to cart</button>
       </div>
     </>

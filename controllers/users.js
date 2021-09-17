@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 
 import User from "../models/user.js";
 import Product from '../models/product.js'
+import product from "../models/product.js";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
@@ -116,8 +117,11 @@ export const deleteCartItem = async (req, res) => {
 export const addToCart = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const product = await Product.findByIdAndUpdate({ userId: User._id }, req.body, { new: true })
-      res.status(200).json(product)
+      const user = await User.findById(req.params.id)
+      const product = await Product.findById(req.params.productId)
+      user.products.push(product)
+      await user.save()
+      return res.status(200).json(product)
     }
     throw new Error(`User ${req.params.id} does not exist!`)
   } catch (error) {
