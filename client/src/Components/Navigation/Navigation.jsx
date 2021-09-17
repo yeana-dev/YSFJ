@@ -67,7 +67,7 @@ const Navigation = ({ user }) => {
             </NavLink>
           </Nav.Item>
           <Nav.Item>
-            <NavLink to="/products">GLASSES</NavLink>
+            <NavLink to="/products">EYEWEAR</NavLink>
           </Nav.Item>
           <Nav.Item>
             <NavLink to="/support">SUPPORT</NavLink>
