@@ -4,10 +4,10 @@ import Layout from "../../Components/Layout/Layout";
 import { getCart } from "../../Services/users";
 import { deleteCartItem } from "../../Services/users";
 
-
 function Cart(props) {
   const [products, setProducts] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       const allProducts = await getCart(props.user.id);

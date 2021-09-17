@@ -584,9 +584,9 @@ const insertData = async () => {
     },
   ];
 
+
   await Product.insertMany(products);
   console.log("Created users & products!");
-
   user1.products = await Product.find({ userId: user1 });
   await user1.save();
   user2.products = await Product.find({ userId: user2 });

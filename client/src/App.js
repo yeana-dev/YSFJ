@@ -54,7 +54,7 @@ const App = () => {
         <Route exact path="/support">
           <Support user={user} />
         </Route>
-        <Route exact path={`/cart`}>
+        <Route exact path={'/cart'}>
           <Cart user={user} />
         </Route>
         <Route exact path="/delete">

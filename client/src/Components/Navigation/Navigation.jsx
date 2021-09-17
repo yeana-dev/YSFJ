@@ -2,24 +2,18 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
-// import { useParams } from "react-router";
-
 import "./Navigation.css";
-// const User = () => {
-//   const params = useParams();
 
-//   return (<h1>{params.id}</h1>
-//   )
-// }
 const authenticatedOptions = (
   <>
+
     <Link className="link" to="/add-product">
       <i className="fas fa-plus-circle"></i>
     </Link>
     <Link className="link" to="/sign-out">
       <button>SIGN OUT</button>
     </Link>
-    <Link className="link" to="/cart">
+    <Link className="link" to={`/cart`}>
       <i class="fas fa-shopping-cart"></i>
     </Link>
   </>
@@ -32,6 +26,7 @@ const unauthenticatedOptions = (
     </Link>
   </>
 );
+
 
 const Navigation = ({ user }) => {
   return (
