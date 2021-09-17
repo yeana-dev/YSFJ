@@ -61,7 +61,7 @@ export const deleteCartItem = async (userId, productId) => {
 
 export const addToCart = async (userId, productId) => {
   try {
-    const response = await api.put(`/users/${userId}/products/${productId}`)
+    const response = await api.put(`/users/${userId}/cart/${productId}`)
     return response.data
   } catch (error) {
     throw error
