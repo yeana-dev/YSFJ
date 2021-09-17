@@ -45,6 +45,10 @@ function Products(props) {
     setSearchResult(results);
   };
 
+  const showAll = () => {
+    setSearchResult(products);
+  };
+
   const handleSubmit = (event) => event.preventDefault();
   console.log(products);
   console.log(searchResult);
@@ -58,17 +62,20 @@ function Products(props) {
         <div className="eyewear-button-container">
           <div className="eyewear-button" onClick={showEyeglasses}>
             <img
-              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_female_glasses_nerd_gerk_student-64.png"
+              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_female_glasses_nerd_gerk_student-48.png"
               alt="character wearing glasses"
             />
             SHOP EYEGLASSES
           </div>
           <div className="eyewear-button" onClick={showSunglasses}>
             <img
-              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_male_young_party_sunglasses-64.png"
+              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_male_young_party_sunglasses-48.png"
               alt="character with sunglasses"
             />
             SHOP SUNGLASSES
+          </div>
+          <div className="eyewear-button all-button" onClick={showAll}>
+            SHOP ALL
           </div>
         </div>
         <header>{header}</header>
