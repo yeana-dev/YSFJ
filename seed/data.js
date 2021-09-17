@@ -85,7 +85,7 @@ const insertData = async () => {
         "With Jorge, grand proportions (oversized round lenses, anyone?) meet thinner acetate for an airier, softer look. Balance is key, after all. It's made from hand-polished cellulose acetate and used Akulon-coated screws for durability.",
       price: 105,
       color: ["black", "brown", "darkgreen"],
-      createdBy: "bruno",
+      createdBy: "bianca",
       userId: user2,
       //  category: {
       //   type: String,
