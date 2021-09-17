@@ -1,3 +1,43 @@
 .cards img {
   width: 300px;
 }
+
+.home-container {
+  display: flex;
+  width: 65vw;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.home-best-sellers {
+  margin: 3em auto;
+}
+
+.home-best-sellers header {
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 10px;
+  margin-bottom: 10px;
+}
+
+.home-best-sellers .products {
+  width: 70vw;
+}
+
+@media (max-width: 990px) {
+  .home-container {
+    width: 100%;
+  }
+  .content-container {
+    padding: 0;
+  }
+  .home-best-sellers .products {
+    width: 100%;
+  }
+}
+
+@media (max-width: 598px) {
+  .detail-products {
+    width: 50%;
+  }
+}

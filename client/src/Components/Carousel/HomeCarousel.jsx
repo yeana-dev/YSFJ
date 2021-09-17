@@ -7,9 +7,9 @@ const imagesCarousel = () => {
     <Carousel>
       {images.map((data, index) => (
         <Carousel.Item key={index}>
-          <img className="d-block w-100" src={data.imgUrl} alt={data.alt} />
+          <img id="d-block w-100" src={data.imgUrl} alt={data.alt} />
           <Carousel.Caption>
-            <div className={`slide-${index}`}>
+            <div className={`slide-${index + 1}`}>
               <h3>{data.header}</h3>
               <p>{data.sub}</p>
             </div>

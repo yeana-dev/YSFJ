@@ -1,6 +1,5 @@
-
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
 const Product = new Schema(
   {
@@ -8,14 +7,15 @@ const Product = new Schema(
     image_url: { type: Array, required: true },
     description: { type: String, required: true },
     price: { type: Number, required: true },
-    color: { type: String, required: true },
-    createdBy: { type: String, required: true }
+    color: { type: Array, required: true },
+    createdBy: { type: String, required: true },
+    userId: { type: Schema.Types.ObjectId, ref: 'users' }
     //  category: {
     //   type: String,
     //   enum: ["glasses" "sunglasses"],
     // required: true, }: Post- MVP
   },
-  { timestamps: true },
-)
+  { timestamps: true }
+);
 
-export default mongoose.model('products', Product)
+export default mongoose.model("products", Product);

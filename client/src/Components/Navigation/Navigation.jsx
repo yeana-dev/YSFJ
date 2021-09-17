@@ -1,8 +1,16 @@
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
-import "./Navigation.css";
+import React from "react";
+// import { useParams } from "react-router";
 
+import "./Navigation.css";
+// const User = () => {
+//   const params = useParams();
+
+//   return (<h1>{params.id}</h1>
+//   )
+// }
 const authenticatedOptions = (
   <>
     <Link className="link" to="/add-product">
@@ -10,6 +18,9 @@ const authenticatedOptions = (
     </Link>
     <Link className="link" to="/sign-out">
       <button>SIGN OUT</button>
+    </Link>
+    <Link className="link" to="/cart">
+      <i class="fas fa-shopping-cart"></i>
     </Link>
   </>
 );
@@ -24,24 +35,43 @@ const unauthenticatedOptions = (
 
 const Navigation = ({ user }) => {
   return (
-    <Navbar sticky="top" expand="lg" id="navbar">
+    <Navbar
+      variant="dark"
+      collapseOnSelect
+      sticky="top"
+      expand="lg"
+      id="navbar"
+    >
       <div className="navbar-top">
-        <Navbar.Brand href="/" id="navbar-logo" className="text-center">
+        <Navbar.Toggle
+          id="navbar-toggle-button"
+          aria-controls="basic-navbar-nav"
+        >
+          <i className="fas fa-bars"></i>
+        </Navbar.Toggle>
+        <Navbar.Brand href="/" id="navbar-logo">
           YSFJ
         </Navbar.Brand>
-        <Navbar.Text>
+        <div id="nav-bar-text">
           {user && (
             <div className="user-name">{`Welcome ${user.username}`}</div>
           )}
           {user ? authenticatedOptions : unauthenticatedOptions}
-        </Navbar.Text>
+        </div>
       </div>
-      <Navbar.Toggle id="navbar-toggle" aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto" id="navbar-bottom">
-          <NavLink to="/">HOME</NavLink>
-          <NavLink to="/products">GLASSES</NavLink>
-          <NavLink to="/support">SUPPORT</NavLink>
+      <Navbar.Collapse>
+        <Nav id="navbar-bottom">
+          <Nav.Item>
+            <NavLink to="/" exact>
+              HOME
+            </NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/products">EYEWEAR</NavLink>
+          </Nav.Item>
+          <Nav.Item>
+            <NavLink to="/support">SUPPORT</NavLink>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

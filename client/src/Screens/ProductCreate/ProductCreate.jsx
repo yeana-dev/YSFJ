@@ -5,14 +5,14 @@ import { createProduct } from "../../Services/products";
 import Layout from "../../Components/Layout/Layout";
 
 const ProductCreate = (props) => {
-  const u = props.user.username
+  const u = props.user.username;
   const [product, setProduct] = useState({
     title: "",
     image_url: [],
     description: "",
     price: "",
     color: "",
-    createdBy: u
+    createdBy: u,
   });
 
   const [isCreated, setCreated] = useState(false);
@@ -45,8 +45,23 @@ const ProductCreate = (props) => {
 
   return (
     <Layout user={props.user}>
+      <div className="image-container">
+        <img
+          className="productCreate-image"
+          src="https://i.imgur.com/ZyxC5VY.png?1"
+          alt="header image"
+        />
+        <div className="new-product">New Products</div>
+      </div>
       <div className="product-create">
         <form className="create-form" onSubmit={handleSubmit}>
+          <br />
+          <img
+            className="productCreate-image2"
+            src="https://i.imgur.com/6zpwLsM.jpg"
+            alt="preview"
+          />
+
           <input
             className="input-title"
             placeholder="title"
@@ -80,15 +95,6 @@ const ProductCreate = (props) => {
             required
             onChange={handleChange}
           />
-          <textarea
-            className="textarea-description"
-            rows={10}
-            placeholder="Description"
-            value={product.description}
-            name="description"
-            required
-            onChange={handleChange}
-          />
 
           <input
             className="input-price"
@@ -105,6 +111,15 @@ const ProductCreate = (props) => {
             name="color"
             required
             autoFocus
+            onChange={handleChange}
+          />
+          <textarea
+            className="textarea-description"
+            rows={10}
+            placeholder="Description"
+            value={product.description}
+            name="description"
+            required
             onChange={handleChange}
           />
           <button type="submit" className="submit-button">

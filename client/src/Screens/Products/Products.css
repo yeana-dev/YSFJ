@@ -1,21 +1,108 @@
-.products-wrapper{
-display: flex;
-width:100%;
-margin:auto 0;
-justify-content: center;
-}
-.products-image2,.products-image1, .middle-wrapper{
-width: 25%;
-}
-
-.middle-wrapper{
-  width:50%;
-  margin-left: 59px;
-  margin-right: 45px;
-}
-
-.products{
+.products-wrapper {
   display: flex;
+  width: 100%;
+  margin: auto 0;
+  justify-content: center;
+}
+
+.glasses-product-list {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.glasses-product-list header {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 26px;
+  letter-spacing: 10px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.sale-message,
+.sale-message2 {
+  color: azure;
+  font-family: "Merriweather", serif;
+}
+
+.sale-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sale-message2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sale-banner {
+  width: 100%;
+}
+
+#horiz-image {
+  height: 300px;
+  object-fit: cover;
+}
+.bottom-image-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.support-link1,
+.support-link2 {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 25%;
+  font-family: "Merriweather", serif;
+}
+
+.support-img-1,
+.support-img-2 {
+  width: 25vw;
+  height: 75%;
+}
+
+.message-1,
+.message-2 {
+  text-align: center;
+  font-weight: 900;
+}
+
+@media (max-width: 1380px) {
+  .sale-message {
+    font-size: revert;
+  }
+  .sale-message2 {
+    font-size: small;
+  }
+}
+
+@media (max-width: 1282px) {
+  .products {
+    display: flex;
     flex-wrap: wrap;
-    margin-top: 90px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 990px) {
+  .products-wrapper {
+    width: 100%;
+  }
+
+  .glasses-product-list {
+    width: 100%;
+    margin: 0;
+  }
 }

@@ -32,15 +32,6 @@ export const signOut = async () => {
   }
 };
 
-// export const changePassword = async (passwords, user) => {
-//   try {
-//     const resp = await api.post('/')
-//     return resp.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 export const verifyUser = async () => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -49,3 +40,21 @@ export const verifyUser = async () => {
   }
   return false;
 };
+
+export const getCart = async (userId) => {
+  try {
+    const response = await api.get(`/users/${userId}/cart`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteCartItem = async (userId, productId) => {
+  try {
+    const response = await api.delete(`/users/${userId}/cart/${productId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

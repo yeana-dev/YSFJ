@@ -1,0 +1,115 @@
+.product-edit {
+  width: 500px;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+
+.edit-form {
+  justify-content: center;
+  align-items: center;
+}
+.image-container img {
+  width: 50%;
+  height: 300px;
+}
+.image-container {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+.new-product {
+  color: white;
+  width: 50%;
+  font-family: "Merriweather", serif;
+  font-size: xxx-large;
+}
+.preview-image {
+  width: 300px;
+}
+
+.productEdit-image {
+  object-fit: contain;
+}
+
+.edit-title {
+  padding: 3em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-0 {
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-1 {
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-2 {
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.image-input-3 {
+  padding: 3em;
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.edit-description {
+  padding: 3em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.edit-price {
+  padding: 3em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.edit-color {
+  padding: 3em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.save-button {
+  color: white;
+  background-color: black;
+  padding: 10px 60px;
+}
