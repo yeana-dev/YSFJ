@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 function Products(props) {
   const [products, setProducts] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
+  const [header, setHeader] = useState("EYEWEAR");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,6 +29,22 @@ function Products(props) {
     console.log(searchResult.length);
   };
 
+  const showEyeglasses = () => {
+    const results = products.filter(
+      (glasses) => glasses.category === "glasses"
+    );
+    setHeader("EYEGLASSES");
+    setSearchResult(results);
+  };
+
+  const showSunglasses = () => {
+    const results = products.filter(
+      (glasses) => glasses.category === "sunglasses"
+    );
+    setHeader("SUNGLASSES");
+    setSearchResult(results);
+  };
+
   const handleSubmit = (event) => event.preventDefault();
   console.log(products);
   console.log(searchResult);
@@ -38,7 +55,23 @@ function Products(props) {
     <Layout user={props.user}>
       <div className="glasses-product-list">
         <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
-        <header>GLASSES</header>
+        <div className="eyewear-button-container">
+          <div className="eyewear-button" onClick={showEyeglasses}>
+            <img
+              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_female_glasses_nerd_gerk_student-64.png"
+              alt="character wearing glasses"
+            />
+            SHOP EYEGLASSES
+          </div>
+          <div className="eyewear-button" onClick={showSunglasses}>
+            <img
+              src="https://cdn4.iconfinder.com/data/icons/stylish-people/32/People_male_young_party_sunglasses-64.png"
+              alt="character with sunglasses"
+            />
+            SHOP SUNGLASSES
+          </div>
+        </div>
+        <header>{header}</header>
         <div className="products">
           {firstHalfArr.map((product, index) => {
             return (
