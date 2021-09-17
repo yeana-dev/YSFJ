@@ -1,49 +1,57 @@
-.product-edit {
+.edit-form-container {
   width: 500px;
-  margin: 0 auto;
-  padding-left: 100px;
+  margin: 2em auto;
+  font-family: "Merriweather", serif;
 }
 
 .edit-form {
   justify-content: center;
   align-items: center;
 }
-.image-container img {
+
+.header-container img {
   width: 50%;
   height: 300px;
+  object-fit: contain;
 }
-.image-container {
+
+.header-container {
   display: flex;
   background-color: black;
   align-items: center;
   justify-content: center;
 }
-.new-product {
+
+.product-form-header {
   color: white;
   width: 50%;
-  font-family: "Merriweather", serif;
   font-size: xxx-large;
 }
-.preview-image {
-  width: 300px;
+
+.preview-image-container,
+.preview-goes-here {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 200px;
 }
 
-.productEdit-image {
-  object-fit: contain;
+.preview-image-container img {
+  width: 100%;
 }
 
-.edit-title {
-  padding: 3em;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+.preview-goes-here {
+  background-color: lightgray;
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.image-input-0 {
-  padding: 3em;
 
+.edit-form input,
+.edit-form textarea {
+  font-size: 14px;
+  padding: 3em;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -51,65 +59,12 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.image-input-1 {
-  padding: 3em;
 
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.image-input-2 {
-  padding: 3em;
-
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.image-input-3 {
-  padding: 3em;
-
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.edit-description {
-  padding: 3em;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.edit-price {
-  padding: 3em;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.edit-color {
-  padding: 3em;
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
 .save-button {
   color: white;
   background-color: black;
+  width: 100%;
   padding: 10px 60px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
 }

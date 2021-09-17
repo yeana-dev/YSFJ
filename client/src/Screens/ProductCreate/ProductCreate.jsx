@@ -5,24 +5,25 @@ import { createProduct } from "../../Services/products";
 import Layout from "../../Components/Layout/Layout";
 
 const ProductCreate = (props) => {
-  const u = props.user.username;
+  const user = props.user.username;
   const [product, setProduct] = useState({
     title: "",
     image_url: [],
     description: "",
     price: "",
     color: "",
-    createdBy: u,
+    createdBy: user,
   });
 
   const [isCreated, setCreated] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
+    const { name, value, dataset } = event.target;
+    const { id } = dataset;
     if (name === "image_url") {
-      const list = [...product.image_url, value];
-      setProduct({ ...product, image_url: list });
+      const updatedProduct = { ...product };
+      updatedProduct.image_url[id] = value;
+      setProduct(updatedProduct);
     } else {
       setProduct({
         ...product,
@@ -30,9 +31,7 @@ const ProductCreate = (props) => {
       });
     }
   };
-  // const addImage = (event) => {
-  //   setProduct(image_url: [...image_url, event.target.value]
-  //   })
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await createProduct(product);
@@ -45,57 +44,71 @@ const ProductCreate = (props) => {
 
   return (
     <Layout user={props.user}>
-      <div className="image-container">
+      <div className="header-container">
         <img
           className="productCreate-image"
           src="https://i.imgur.com/ZyxC5VY.png?1"
           alt="header image"
         />
-        <div className="new-product">New Products</div>
+        <div className="product-form-header">New Products</div>
       </div>
       <div className="product-create">
         <form className="create-form" onSubmit={handleSubmit}>
-          <br />
-          <img
-            className="productCreate-image2"
-            src="https://i.imgur.com/6zpwLsM.jpg"
-            alt="preview"
+          <div className="preview-image-container">
+            {product.image_url[0] ? (
+              <img
+                className="preview-image"
+                src={product.image_url[0]}
+                alt="preview"
+              />
+            ) : (
+              <div className="preview-goes-here">Thumbnail Preview</div>
+            )}
+          </div>
+          <input
+            className="image-input-0"
+            placeholder="Image Link 1 (Thumbnail)"
+            value={product.image_url[0]}
+            name="image_url"
+            data-id="0"
+            required
+            onChange={handleChange}
           />
-
+          <input
+            className="image-input-1"
+            placeholder="Image Link 2"
+            value={product.image_url[1]}
+            name="image_url"
+            data-id="1"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="image-input-2"
+            placeholder="Image Link 3"
+            value={product.image_url[2]}
+            name="image_url"
+            data-id="2"
+            required
+            onChange={handleChange}
+          />
+          <input
+            className="image-input-3"
+            placeholder="Image Link 4"
+            value={product.image_url[3]}
+            name="image_url"
+            data-id="3"
+            required
+            onChange={handleChange}
+          />
           <input
             className="input-title"
-            placeholder="title"
+            placeholder="Title"
             value={product.title}
             name="title"
             required
-            autoFocus
             onChange={handleChange}
           />
-          <input
-            className="input-image-link"
-            placeholder="Image Link"
-            value={product.image_url[0]}
-            name="image_url"
-            required
-            onChange={handleChange}
-          />
-          <input
-            className="input-image-link"
-            placeholder="Image Link"
-            value={product.image_url[1]}
-            name="image_url"
-            required
-            onChange={handleChange}
-          />
-          <input
-            className="input-image-link"
-            placeholder="Image Link"
-            value={product.image_url[2]}
-            name="image_url"
-            required
-            onChange={handleChange}
-          />
-
           <input
             className="input-price"
             placeholder="Price"
@@ -114,7 +127,7 @@ const ProductCreate = (props) => {
             onChange={handleChange}
           />
           <textarea
-            className="textarea-description"
+            className="input-description"
             rows={10}
             placeholder="Description"
             value={product.description}
