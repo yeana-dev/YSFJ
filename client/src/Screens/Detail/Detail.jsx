@@ -90,17 +90,26 @@ const Detail = (props) => {
           <hr />
           <div className="detail-color">
             <div className="product-color">
-              {detail.color.map((color, index) => (
-                <button
-                  style={{ backgroundColor: color }}
-                  id={`${selected === color ? `selected` : null}`}
-                  key={index}
-                  onClick={() => {
-                    handleSelect(color);
-                  }}
-                ></button>
-              ))}
-              <p>{selected}</p>
+              <div className="color-options color-boxes">
+                {detail.color.map((color, index) => (
+                  <button
+                    style={{ backgroundColor: color }}
+                    id={`${selected === color ? `selected` : null}`}
+                    key={index}
+                    onClick={() => {
+                      handleSelect(color);
+                    }}
+                  ></button>
+                ))}
+              </div>
+              <div className="selected-color color-boxes">
+                {selected ? (
+                  <button style={{ backgroundColor: selected }}></button>
+                ) : (
+                  "Select your color!"
+                )}
+                <span>{selected.toUpperCase()}</span>
+              </div>
             </div>
           </div>
           <hr />

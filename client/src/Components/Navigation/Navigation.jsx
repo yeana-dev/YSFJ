@@ -19,7 +19,9 @@ const authenticatedOptions = (
     <Link className="link" to="/sign-out">
       <button>SIGN OUT</button>
     </Link>
-    <Link className="link" to="/cart">Cart</Link>
+    <Link className="link" to="/cart">
+      <i class="fas fa-shopping-cart"></i>
+    </Link>
   </>
 );
 

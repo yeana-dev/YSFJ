@@ -5,6 +5,7 @@ import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
 import { getProducts } from "../../Services/products";
+import { Link } from "react-router-dom";
 
 function Products(props) {
   const [products, setProducts] = useState([]);
@@ -68,7 +69,6 @@ function Products(props) {
               </Card.Text>
             </Card.ImgOverlay>
           </Card>
-
           {secondHalfArr.map((product, index) => {
             return (
               <Detail
@@ -81,6 +81,26 @@ function Products(props) {
               />
             );
           })}
+        </div>
+        <div className="bottom-image-links">
+          <Link className="support-link1" to="/support">
+            <img
+              className="support-img-1"
+              src="https://images.unsplash.com/photo-1600630242764-41cf7d951ac4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODV8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt="card-image"
+            />
+            <p className="message-1">
+              Contact an professional to get any questions on frames
+            </p>
+          </Link>
+          <Link className="support-link2" to="/newsletter">
+            <img
+              className="support-img-2"
+              src="https://images.unsplash.com/photo-1553544923-37efbe6ff816?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGdsYXNzZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt="card-image"
+            />
+            <p className="message-2">Subscribe to our news letter</p>
+          </Link>
         </div>
       </div>
     </Layout>
