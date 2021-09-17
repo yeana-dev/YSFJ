@@ -58,3 +58,12 @@ export const deleteCartItem = async (userId, productId) => {
     throw error
   }
 }
+
+export const addToCart = async (userId, productId) => {
+  try {
+    const response = await api.put(`/users/${userId}/products/${productId}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

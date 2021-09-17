@@ -3,6 +3,7 @@ import Layout from "../../Components/Layout/Layout";
 import { getDetail } from "../../Services/products";
 import { deleteProduct } from "../../Services/products";
 import { useParams, Link, useHistory } from "react-router-dom";
+import { addToCart } from "../../Services/users";
 import "./Detail.css";
 
 const Detail = (props) => {
@@ -48,15 +49,13 @@ const Detail = (props) => {
   );
 
   const unauthenticatedOptions = (
-    null
-    // <>
-    //   {detail.userId === props.user.id ?
-    //     null :
-    //     <div className="add-to-cart">
-    //       <button onClick>Add to cart</button>
-    //     </div>
-    //   }
-    // </>
+    <>
+      <div className="add-to-cart">
+        <button onClick={() => {
+          addToCart(detail.userId, detail._id)
+        }}>Add to cart</button>
+      </div>
+    </>
   );
 
   return (
