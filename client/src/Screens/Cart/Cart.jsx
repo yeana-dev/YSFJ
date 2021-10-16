@@ -18,7 +18,6 @@ function Cart(props) {
     fetchProducts();
   }, [props.user.id]);
 
-
   let totalPrice = 0;
 
   return (
@@ -42,7 +41,7 @@ function Cart(props) {
                   deleteCartItem(product.userId, product._id);
                 }}
               >
-                Delete
+                <i class="fas fa-trash-alt"></i>
               </button>
             </div>
           );
