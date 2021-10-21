@@ -8,7 +8,9 @@ YSFJ 😎
 
 ## Project Description
 
-From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual eyewear boutique. Don't lose sight of what matters most. Glasses for adventure. **Glasses for life!**
+From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual eyewear boutique. Don't lose sight of what matters most. Glasses for adventure.
+
+**Glasses for life!**
 
 ## API and Data Sample
 
@@ -43,9 +45,9 @@ From the creators of the famous blog 'four-eyes', YSFJ is a streamlined virtual 
 | September 10 | Wireframes, Approval, Back-end/Authentication                           | Complete   |
 | September 13 | Components, Screens, Debugging, Deployment                              | Complete   |
 | September 14 | Sophie's Birthday! 🥳 CSS / Post-MVP: Search, Support                   | Complete   |
-| September 15 | CSS / Post-MVP: Cart, Multiple images on Detail                         | Incomplete |
+| September 15 | CSS / Post-MVP: Cart, Multiple images on Detail                         | Complete |
 | September 16 | CSS: Responsive / Post-MVP: Bottom feature cards, nearest store / Debug | Complete   |
-| September 17 | Presentations                                                           | Incomplete |
+| September 17 | Presentations                                                           | Complete |
 
 ## Timeframes
 
