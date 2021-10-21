@@ -1,9 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
 import User from "../models/user.js";
-import Product from '../models/product.js'
-import product from "../models/product.js";
+import Product from "../models/product.js";
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
@@ -79,53 +77,52 @@ export const verify = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id).populate('products')
-    res.json(user)
+    const user = await User.findById(req.params.id).populate("products");
+    res.json(user);
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: error.message })
+    console.log(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 export const getCart = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id)
-    const userProducts = await Product.find({ userId: user._id })
-    res.json(userProducts)
+    const userCart = await User.findById(req.params.id);
+    res.json(userCart.products);
   } catch (error) {
-    console.log(error.message)
-    res.status(500).json({ error: error.message })
+    console.log(error.message);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 export const deleteCartItem = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const deleted = await Product.findByIdAndDelete(req.params.productId)
+      const deleted = await Product.findByIdAndDelete(req.params.productId);
       if (deleted) {
-        return res.status(200).send('Product deleted')
+        return res.status(200).send("Product deleted");
       }
-      throw new Error(`Product ${req.params.productId} not found`)
+      throw new Error(`Product ${req.params.productId} not found`);
     }
-    throw new Error(`User ${req.params.id} does not exist!`)
+    throw new Error(`User ${req.params.id} does not exist!`);
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: error.message })
+    console.log(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
 
 export const addToCart = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const user = await User.findById(req.params.id)
-      const product = await Product.findById(req.params.productId)
-      user.products.push(product)
-      await user.save()
-      return res.status(200).json(product)
+      const user = await User.findById(req.params.id);
+      const product = await Product.findById(req.params.productId);
+      user.products.push(product);
+      await user.save();
+      return res.status(200).json(product);
     }
-    throw new Error(`User ${req.params.id} does not exist!`)
+    throw new Error(`User ${req.params.id} does not exist!`);
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: error.message })
+    console.log(error);
+    res.status(500).json({ error: error.message });
   }
-}
+};
