@@ -51,9 +51,13 @@ const Detail = (props) => {
   const unauthenticatedOptions = (
     <>
       <div className="add-to-cart">
-        <button onClick={() => {
-          addToCart(props.user.id, detail._id)
-        }}>Add to cart</button>
+        <button
+          onClick={() => {
+            addToCart(props.user.id, detail._id);
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </>
   );

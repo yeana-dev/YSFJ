@@ -1,9 +1,9 @@
-.fixit{
+.fixit {
   display: flex;
   justify-content: center;
 }
 
-.newsletter-container{
+.newsletter-container {
   display: flex;
   flex-direction: column;
   background-color: #d9d9d962;
@@ -16,12 +16,12 @@
   align-items: center;
 }
 
-.label-stuff{
+.label-stuff {
   font-family: "Abril Fatface", cursive;
   font-size: 40px;
 }
 
-.newsletter-container > input{
+.newsletter-container > input {
   background: #ebebeb;
   border: none;
   box-shadow: inset -3px 5px 7px 0px rgb(0 0 0 / 20%);
@@ -29,9 +29,10 @@
   font-family: "Merriweather", serif;
   font-size: 12px;
   margin: 3em 0;
+  width: 100%;
 }
 
-.news-submit{
+.news-submit {
   background: black;
   color: white;
   width: 75px;
