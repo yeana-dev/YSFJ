@@ -98,11 +98,10 @@ export const getCart = async (req, res) => {
 export const deleteCartItem = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      const deleted = await Product.findByIdAndDelete(req.params.productId);
-      if (deleted) {
-        return res.status(200).send("Product deleted");
-      }
-      throw new Error(`Product ${req.params.productId} not found`);
+      const user = await User.findById(req.params.id);
+      user.products.splice(user.products.indexOf(req.params.productId), 1);
+      await user.save();
+      return res.status(200).send("Product deleted");
     }
     throw new Error(`User ${req.params.id} does not exist!`);
   } catch (error) {

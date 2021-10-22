@@ -21,13 +21,17 @@ function Cart(props) {
   }, [props.user.id]);
 
   let totalPrice = 0;
-  console.log(cartItems);
 
+  const handleDelete = (productId, product) => {
+    deleteCartItem(props.user.id, productId);
+    cartItems.splice(cartItems.indexOf(product), 1);
+    const newArr = [...cartItems];
+    setCartItems(newArr);
+  };
   return (
     <Layout user={props.user}>
       <div className="cart-container">
         {cartItems.map((product) => {
-          console.log(product);
           totalPrice += product.price;
           return (
             <div className="cart-item">
@@ -40,7 +44,7 @@ function Cart(props) {
                 </div>
               </div>
               <img src={product.image_url[0]} alt="cart-item-preview" />
-              <button onClick={() => {}}>
+              <button onClick={() => handleDelete(product._id, product)}>
                 <i class="fas fa-trash-alt"></i>
               </button>
             </div>
