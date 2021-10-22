@@ -26,7 +26,6 @@ function Products(props) {
       detail.title.toLowerCase().includes(event.target.value.toLowerCase())
     );
     setSearchResult(results);
-    console.log(searchResult.length);
   };
 
   const showEyeglasses = () => {
@@ -50,8 +49,6 @@ function Products(props) {
   };
 
   const handleSubmit = (event) => event.preventDefault();
-  console.log(products);
-  console.log(searchResult);
   const firstHalfArr = searchResult.slice(0, 6);
   const secondHalfArr = searchResult.slice(6);
 
