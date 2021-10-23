@@ -49,78 +49,80 @@ const Detail = (props) => {
   );
 
   const unauthenticatedOptions = (
-    <>
-      <div className="add-to-cart">
-        <button
-          onClick={() => {
+    <div className="add-to-cart">
+      <button
+        onClick={() => {
+          if (props.user) {
+            props.setUserCart((prevState) => [...prevState, detail._id]);
             addToCart(props.user.id, detail._id);
-          }}
-        >
-          Add to cart
-        </button>
-      </div>
-    </>
+          } else {
+            alert("Please login!");
+            history.push("/sign-in");
+          }
+        }}
+      >
+        Add to cart
+      </button>
+    </div>
   );
 
   return (
-    <Layout user={props.user}>
-      <div className="detail-container">
-        <div className="detail-left">
-          <div className="image-thumbnails">
-            {detail.image_url.map((image, index) => (
-              <img
-                className="detail-image"
-                src={image}
-                alt="glasses"
-                key={index}
-                onMouseEnter={() => {
-                  setRenderedImage(image);
-                }}
-              />
-            ))}
-          </div>
-          <img src={renderedImage} alt="glasses" id="rendered-image" />
+    <div className="detail-container">
+      <div className="detail-left">
+        <div className="image-thumbnails">
+          {detail.image_url.map((image, index) => (
+            <img
+              className="detail-image"
+              src={image}
+              alt="glasses"
+              key={index}
+              onMouseEnter={() => {
+                setRenderedImage(image);
+              }}
+            />
+          ))}
         </div>
-        <div className="detail-right">
-          <div className="detail-top">
-            <div className="detail-top-left">
-              <div className="title">{detail.title}</div>
-              <div className="price">{`$${detail.price}`}</div>
-            </div>
-            {props.user !== null && props.user.username === detail.createdBy
-              ? authenticatedOptions
-              : unauthenticatedOptions}
-          </div>
-          <hr />
-          <div className="detail-color">
-            <div className="product-color">
-              <div className="color-options color-boxes">
-                {detail.color.map((color, index) => (
-                  <button
-                    style={{ backgroundColor: color }}
-                    id={`${selected === color ? `selected` : null}`}
-                    key={index}
-                    onClick={() => {
-                      handleSelect(color);
-                    }}
-                  ></button>
-                ))}
-              </div>
-              <div className="selected-color color-boxes">
-                {selected ? (
-                  <button style={{ backgroundColor: selected }}></button>
-                ) : (
-                  "Select your color!"
-                )}
-                <span>{selected.toUpperCase()}</span>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div className="detail-description">{detail.description}</div>
-        </div>
+        <img src={renderedImage} alt="glasses" id="rendered-image" />
       </div>
-    </Layout>
+      <div className="detail-right">
+        <div className="detail-top">
+          <div className="detail-top-left">
+            <div className="title">{detail.title}</div>
+            <div className="price">{`$${detail.price}`}</div>
+          </div>
+          {props.user !== null && props.user.username === detail.createdBy
+            ? authenticatedOptions
+            : unauthenticatedOptions}
+        </div>
+        <hr />
+        <div className="detail-color">
+          <div className="product-color">
+            <div className="color-options color-boxes">
+              {detail.color.map((color, index) => (
+                <button
+                  style={{ backgroundColor: color }}
+                  id={`${selected === color ? `selected` : null}`}
+                  key={index}
+                  onClick={() => {
+                    handleSelect(color);
+                  }}
+                ></button>
+              ))}
+            </div>
+            <div className="selected-color color-boxes">
+              {selected ? (
+                <button style={{ backgroundColor: selected }}></button>
+              ) : (
+                "Select your color!"
+              )}
+              <span>{selected.toUpperCase()}</span>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className="detail-description">{detail.description}</div>
+      </div>
+    </div>
   );
 };
 
