@@ -4,7 +4,7 @@ import "./Layout.css";
 const Layout = (props) => {
   return (
     <>
-      <Navigation user={props.user} />
+      <Navigation user={props.user} userCart={props.userCart} />
       <div className="content-container">{props.children}</div>
     </>
   );
