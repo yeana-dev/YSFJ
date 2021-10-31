@@ -63,7 +63,7 @@ const App = () => {
             <Support user={user} />
           </Route>
           <Route exact path={"/cart"}>
-            <Cart user={user} setUserCart={setUserCart} />
+            <Cart user={user} userCart={userCart} setUserCart={setUserCart} />
           </Route>
           <Route exact path="/delete">
             <Delete user={user} />
