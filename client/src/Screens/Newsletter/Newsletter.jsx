@@ -1,5 +1,4 @@
 import "./Newsletter.css";
-import Layout from "../../Components/Layout/Layout";
 import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 const Newsletter = (props) => {

@@ -1,4 +1,3 @@
-import Layout from "../../Components/Layout/Layout";
 import HomeCarousel from "../../Components/Carousel/HomeCarousel";
 import ProductList from "../../Components/ProductList/ProductList";
 import "./Home.css";

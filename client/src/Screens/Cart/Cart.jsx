@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./Cart.css";
-import Layout from "../../Components/Layout/Layout";
 import { getProducts } from "../../Services/products";
 import { getCart, deleteCartItem } from "../../Services/users";
 

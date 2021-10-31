@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import "./Products.css";
-import Layout from "../../Components/Layout/Layout";
 import Detail from "../../Components/Detail/Detail";
 import Search from "../../Components/Search/Search";
 import { getProducts } from "../../Services/products";

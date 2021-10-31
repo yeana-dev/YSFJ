@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./ProductEdit.css";
 import { useParams, Redirect } from "react-router-dom";
-import Layout from "../../Components/Layout/Layout";
 import { getDetail, updateProduct } from "../../Services/products";
 
 const ProductEdit = (props) => {

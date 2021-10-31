@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "../../Components/Layout/Layout";
 import { getDetail } from "../../Services/products";
 import { deleteProduct } from "../../Services/products";
 import { useParams, Link, useHistory } from "react-router-dom";

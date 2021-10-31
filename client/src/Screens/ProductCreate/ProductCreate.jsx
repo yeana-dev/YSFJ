@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./ProductCreate.css";
 import { Redirect } from "react-router-dom";
 import { createProduct } from "../../Services/products";
-import Layout from "../../Components/Layout/Layout";
 
 const ProductCreate = (props) => {
   const user = props.user.username;

@@ -1,4 +1,3 @@
-import Layout from "../../Components/Layout/Layout";
 import "./Delete.css";
 import Card from "react-bootstrap/Card";
 function Delete(props) {
