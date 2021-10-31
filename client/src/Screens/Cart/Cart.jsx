@@ -4,12 +4,17 @@ import { getProducts } from "../../Services/products";
 import { getCart, deleteCartItem } from "../../Services/users";
 
 function Cart(props) {
+  // Because we need to change the array of cartItems instantly when the user deletes an item from the cart,
+  // We will need to useState for the cart items in this screen
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const fetchCart = async () => {
+      // Once the page renders, we will need to grab current user's cart items using GET method by current user's id
       const items = await getCart(props.user.id);
       const allProducts = await getProducts();
+      // CURRENTLY WORK IN PROGRESS! We are trying to figure out if we can just these two steps above within one step
+      // For example, Make user's cart array contains all the information about the item instead of just an id of the item
       let cartArray = [];
       items.forEach((item) => {
         cartArray.push(allProducts.find((product) => item === product._id));
@@ -19,18 +24,23 @@ function Cart(props) {
     fetchCart();
   }, [props.user.id]);
 
+  // Make a variable for total price, so we can add them up by each cart item to display it
   let totalPrice = 0;
 
   const handleDelete = (productId, product) => {
+    // Call DELETE API call using current user id and deleted cart item id
     deleteCartItem(props.user.id, productId);
+    // Remove the deleted item from the cart array
     cartItems.splice(cartItems.indexOf(product), 1);
-    const newArr = [...cartItems];
-    setCartItems(newArr);
-    console.log(newArr);
+    // This will re-arrange the cart items that renders to the screen
+    setCartItems([...cartItems]);
+    // This will change the quantity of the cart items that is being displayed in the navbar
+    props.setUserCart([...cartItems]);
   };
   return (
     <div className="cart-container">
       {cartItems.map((product, index) => {
+        // Add the current cart item's price to the total price variable we created earlier
         totalPrice += product.price;
         return (
           <div className="cart-item" key={index}>
