@@ -2,8 +2,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
-import { getCart } from "../../Services/users";
-import { useState, useEffect } from "react";
 import "./Navigation.css";
 
 const Navigation = (props) => {
@@ -29,8 +27,6 @@ const Navigation = (props) => {
       </Link>
     </>
   );
-
-  console.log(props.userCart);
   return (
     <Navbar
       variant="dark"
