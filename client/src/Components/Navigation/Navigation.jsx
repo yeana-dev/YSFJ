@@ -2,33 +2,35 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
 import React from "react";
+import { getCart } from "../../Services/users";
+import { useState, useEffect } from "react";
 import "./Navigation.css";
 
-const authenticatedOptions = (
-  <>
+const Navigation = (props) => {
+  const authenticatedOptions = (
+    <>
+      <Link className="link" to="/add-product">
+        <i className="fas fa-plus-circle" />
+      </Link>
+      <Link className="link" to="/sign-out">
+        <button>SIGN OUT</button>
+      </Link>
+      <Link className="link" to={`/cart`}>
+        <i className="fas fa-shopping-cart" />
+        &nbsp;{props.userCart.length}
+      </Link>
+    </>
+  );
 
-    <Link className="link" to="/add-product">
-      <i className="fas fa-plus-circle"></i>
-    </Link>
-    <Link className="link" to="/sign-out">
-      <button>SIGN OUT</button>
-    </Link>
-    <Link className="link" to={`/cart`}>
-      <i class="fas fa-shopping-cart"></i>
-    </Link>
-  </>
-);
+  const unauthenticatedOptions = (
+    <>
+      <Link className="link" to="/sign-in">
+        <i className="fas fa-user-circle" />
+      </Link>
+    </>
+  );
 
-const unauthenticatedOptions = (
-  <>
-    <Link className="link" to="/sign-in">
-      <i className="fas fa-user-circle"></i>
-    </Link>
-  </>
-);
-
-
-const Navigation = ({ user }) => {
+  console.log(props.userCart);
   return (
     <Navbar
       variant="dark"
@@ -42,16 +44,16 @@ const Navigation = ({ user }) => {
           id="navbar-toggle-button"
           aria-controls="basic-navbar-nav"
         >
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars" />
         </Navbar.Toggle>
         <Navbar.Brand href="/" id="navbar-logo">
           YSFJ
         </Navbar.Brand>
         <div id="nav-bar-text">
-          {user && (
-            <div className="user-name">{`Welcome ${user.username}`}</div>
+          {props.user && (
+            <div className="user-name">{`Welcome ${props.user.username}`}</div>
           )}
-          {user ? authenticatedOptions : unauthenticatedOptions}
+          {props.user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </div>
       <Navbar.Collapse>

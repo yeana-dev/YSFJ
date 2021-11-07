@@ -43,27 +43,27 @@ export const verifyUser = async () => {
 
 export const getCart = async (userId) => {
   try {
-    const response = await api.get(`/users/${userId}/cart`)
-    return response.data
+    const response = await api.get(`/users/${userId}/cart`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const deleteCartItem = async (userId, productId) => {
   try {
-    const response = await api.delete(`/users/${userId}/cart/${productId}`)
-    return response.data
+    const response = await api.delete(`/users/${userId}/cart/${productId}`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 export const addToCart = async (userId, productId) => {
   try {
-    const response = await api.put(`/users/${userId}/cart/${productId}`)
-    return response.data
+    const response = await api.put(`/users/${userId}/cart/${productId}`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
