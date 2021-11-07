@@ -37,30 +37,36 @@ function Cart(props) {
     // This will change the quantity of the cart items that is being displayed in the navbar
     props.setUserCart([...cartItems]);
   };
-  return (
-    <div className="cart-container">
-      {cartItems.map((product, index) => {
-        // Add the current cart item's price to the total price variable we created earlier
-        totalPrice += product.price;
-        return (
-          <div className="cart-item" key={index}>
-            <div className="cart-item-left">
-              <div className="cart-item-title">{product.title}</div>
-              <div className="cart-item-price">$ {product.price}</div>
-              <hr />
-              <div className="cart-item-description">{product.description}</div>
+  if (!cartItems) {
+    return <header>Loading...</header>;
+  } else {
+    return (
+      <div className="cart-container">
+        {cartItems.map((product, index) => {
+          // Add the current cart item's price to the total price variable we created earlier
+          totalPrice += product.price;
+          return (
+            <div className="cart-item" key={index}>
+              <div className="cart-item-left">
+                <div className="cart-item-title">{product.title}</div>
+                <div className="cart-item-price">$ {product.price}</div>
+                <hr />
+                <div className="cart-item-description">
+                  {product.description}
+                </div>
+              </div>
+              <img src={product.image_url[0]} alt="cart-item-preview" />
+              <button onClick={() => handleDelete(product._id, product)}>
+                <i className="fas fa-trash-alt"></i>
+              </button>
             </div>
-            <img src={product.image_url[0]} alt="cart-item-preview" />
-            <button onClick={() => handleDelete(product._id, product)}>
-              <i className="fas fa-trash-alt"></i>
-            </button>
-          </div>
-        );
-      })}
-      <div className="cart-item">
-        <div className="cart-total-price">Total : $ {totalPrice}</div>
+          );
+        })}
+        <div className="cart-item">
+          <div className="cart-total-price">Total : $ {totalPrice}</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 export default Cart;
