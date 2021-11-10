@@ -15,15 +15,15 @@ function Cart(props) {
       const allProducts = await getProducts();
       // CURRENTLY WORK IN PROGRESS! We are trying to figure out if we can just these two steps above within one step
       // For example, Make user's cart array contains all the information about the item instead of just an id of the item
-      let cartArray = [];
       items.forEach((item) => {
-        cartArray.push(allProducts.find((product) => item === product._id));
+        setCartItems((prevState) => [
+          ...prevState,
+          allProducts.find((product) => item === product._id),
+        ]);
       });
-      setCartItems(cartArray);
     };
     fetchCart();
   }, [props.user.id]);
-
   // Make a variable for total price, so we can add them up by each cart item to display it
   let totalPrice = 0;
 
