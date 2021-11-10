@@ -75,6 +75,16 @@ export const verify = async (req, res) => {
   }
 };
 
+export const getUsers = async (req, res) => {
+  try {
+    const users = await User.find().populate("products");
+    res.json(users);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
 export const getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id).populate("products");
