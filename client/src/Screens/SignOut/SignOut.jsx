@@ -9,6 +9,7 @@ const SignOut = (props) => {
     const signOutUser = async () => {
       await signOut();
       setUser(null);
+      props.setUserCart([]);
       history.push("/");
     };
     signOutUser();
