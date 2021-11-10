@@ -20,12 +20,16 @@ const App = () => {
   const [userCart, setUserCart] = useState([]);
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await verifyUser();
-      if (user) {
-        setUser(user);
-        const cart = await getCart(user.id);
+      // Check the token in the browser to see if the token is valid
+      const resp = await verifyUser();
+      if (resp) {
+        // If the token is valid, Grab user's cart to allow navbar is display user's cart
+        const cart = await getCart(resp.id);
         setUserCart(cart);
+        // Also set current user with the payload
+        setUser(resp);
       } else {
+        // If the token is not valid, keep the current user null
         setUser(null);
       }
     };
@@ -45,7 +49,7 @@ const App = () => {
             <SignIn setUser={setUser} />
           </Route>
           <Route path="/sign-out">
-            <SignOut setUser={setUser} />
+            <SignOut setUser={setUser} setUserCart={setUserCart} />
           </Route>
           <Route exact path="/products">
             <Products user={user} />
