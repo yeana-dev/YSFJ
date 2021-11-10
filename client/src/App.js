@@ -49,7 +49,7 @@ const App = () => {
             <SignIn setUser={setUser} />
           </Route>
           <Route path="/sign-out">
-            <SignOut setUser={setUser} />
+            <SignOut setUser={setUser} setUserCart={setUserCart} />
           </Route>
           <Route exact path="/products">
             <Products user={user} />
