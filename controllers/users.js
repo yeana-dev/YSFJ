@@ -125,7 +125,7 @@ export const addToCart = async (req, res) => {
     if (await User.findById(req.params.id)) {
       const user = await User.findById(req.params.id);
       const product = await Product.findById(req.params.productId);
-      user.products.push(product);
+      user.products.push(product._id);
       await user.save();
       return res.status(200).json(product);
     }
