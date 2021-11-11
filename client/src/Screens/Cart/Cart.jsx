@@ -12,15 +12,7 @@ function Cart(props) {
     const fetchCart = async () => {
       // Once the page renders, we will need to grab current user's cart items using GET method by current user's id
       const items = await getCart(props.user.id);
-      const allProducts = await getProducts();
-      // CURRENTLY WORK IN PROGRESS! We are trying to figure out if we can just these two steps above within one step
-      // For example, Make user's cart array contains all the information about the item instead of just an id of the item
-      items.forEach((item) => {
-        setCartItems((prevState) => [
-          ...prevState,
-          allProducts.find((product) => item === product._id),
-        ]);
-      });
+      setCartItems(items);
     };
     fetchCart();
   }, [props.user.id]);
