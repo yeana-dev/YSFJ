@@ -97,7 +97,7 @@ export const getUser = async (req, res) => {
 
 export const getCart = async (req, res) => {
   try {
-    const userCart = await User.findById(req.params.id);
+    const userCart = await User.findById(req.params.id).populate("products");
     res.json(userCart.products);
   } catch (error) {
     console.log(error.message);
@@ -125,7 +125,7 @@ export const addToCart = async (req, res) => {
     if (await User.findById(req.params.id)) {
       const user = await User.findById(req.params.id);
       const product = await Product.findById(req.params.productId);
-      user.products.push(product._id);
+      user.products.push(product);
       await user.save();
       return res.status(200).json(product);
     }
